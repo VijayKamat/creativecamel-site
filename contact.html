@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Creative Camel Studio</title>
+<meta name="description" content="Start a project or book a design workshop with Creative Camel Studio. We'll get back to you within 24 hours.">
+<meta property="og:title" content="Contact — Creative Camel Studio">
+<meta property="og:description" content="Start a project or book a design workshop. We'll get back to you within 24 hours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://creativecamel.in/contact.html">
+<link rel="icon" type="image/png" href="assets/img/logo-camel-face.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><img src="assets/img/logo-camel-face-light.png" alt="Creative Camel logo">Creative Camel</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="workshops.html">Workshops &amp; Mentoring</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a class="nav-cta" href="#form">Book a free UX audit</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Contact</span>
+    <h1>Let's make something <em>great</em></h1>
+    <p class="hero-sub">Tell us about your project or workshop — we'll get in touch within 24 hours.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:30px">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <h2>Talk to us</h2>
+      <p>Prefer a direct line? Call, WhatsApp or email — whatever works for you.</p>
+      <div class="c-line"><span class="ic">📞</span><div><span>Phone / WhatsApp</span><a href="tel:+917829079279">+91 78290 79279</a></div></div>
+      <div class="c-line"><span class="ic">✉️</span><div><span>Projects &amp; workshops</span><a href="mailto:info@creativecamel.in">info@creativecamel.in</a></div></div>
+      <div class="c-line"><span class="ic">💼</span><div><span>Careers</span><a href="mailto:jobs@creativecamel.in">jobs@creativecamel.in</a></div></div>
+      <div class="c-line"><span class="ic">📍</span><div><span>Studio</span>Bengaluru, India</div></div>
+    </div>
+
+    <form class="form-card reveal reveal-d1" id="form" action="https://formsubmit.co/info@creativecamel.in" method="POST">
+      <h3>Send a message</h3>
+      <p class="fc-sub">We'll get back to you within 24 hours.</p>
+      <input type="hidden" name="_subject" value="New enquiry from creativecamel.in">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="f-phone">Phone</label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="f-topic">I'm interested in</label>
+        <select id="f-topic" name="interest">
+          <option>A design project (branding / website / UX)</option>
+          <option>A workshop for my college</option>
+          <option>A corporate training</option>
+          <option>1:1 mentoring</option>
+          <option>A free UX audit</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg" name="message" placeholder="Tell us a little about what you have in mind…"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" style="width:100%;border:none;font-family:inherit">Get in touch</button>
+      <p class="form-note">This form sends straight to info@creativecamel.in.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/img/logo-camel-heart-light.png" alt="Creative Camel Studio">
+        <div class="tagline">Designing with a heart</div>
+      </div>
+      <div class="foot-col">
+        <h4>Studio</h4>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="workshops.html">Workshops &amp; Mentoring</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="tel:+917829079279">+91 78290 79279</a>
+        <a href="mailto:info@creativecamel.in">info@creativecamel.in</a>
+        <a href="mailto:jobs@creativecamel.in">jobs@creativecamel.in</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Creative Camel Studio. All rights reserved.</span>
+      <span>Made with ♥ in Bengaluru</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
