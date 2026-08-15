@@ -12,38 +12,39 @@
 <link rel="icon" type="image/png" href="assets/img/logo-camel-face.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=26">
 </head>
 <body>
 
-<nav class="nav" aria-label="Main">
-  <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><img src="assets/img/logo-camel-face-light.png" alt="Creative Camel logo">Creative Camel</a>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="projects.html" class="active">Projects</a>
-      <a href="workshops.html">Workshops &amp; Mentoring</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <a class="nav-cta" href="contact.html">Book a free UX audit</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-  </div>
-</nav>
+<div class="hero-card">
+  <div class="bubble" style="width:20px;height:20px;top:36px;left:6%;opacity:.5"></div>
+  <div class="bubble" style="width:16px;height:16px;top:70px;right:10%;opacity:.55"></div>
 
-<header class="page-hero">
-  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span>Projects</span>
-    <h1>Work we're <em>proud</em> of</h1>
+    <nav class="nav-inner" aria-label="Main">
+      <a class="brand" href="index.html"><img src="assets/img/logo-camel-face.png" alt="Creative Camel logo">Creative Camel</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="workshops.html">Workshops &amp; Mentoring</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a class="nav-cta" href="contact.html">Book a free UX audit</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </nav>
+  </div>
+
+  <div class="wrap page-hero">
+    <h1>Work we're <span class="light">proud</span> of</h1>
     <p class="hero-sub">Every project starts with a question: what will make this succeed? Here's how we answered it.</p>
   </div>
-</header>
+</div>
 
 <main class="wrap">
 
   <article class="project reveal" id="fittrack">
-    <div class="shots glow-pink">
+    <div class="shots tint-yellow">
       <img src="assets/img/fittrack-progress.png" alt="FitTrack progress dashboard with activity charts">
       <img src="assets/img/fittrack-hero.png" alt="FitTrack onboarding screen">
     </div>
@@ -52,7 +53,7 @@
       <h3>FitTrack</h3>
       <p class="desc">A fitness companion designed to keep people moving every day — workouts, meal plans, sleep and progress in one clean, motivating experience.</p>
       <ul class="facts">
-        <li>End-to-end UX: research, flows, wireframes and high-fidelity UI</li>
+        <li>End to end UX: research, flows, wireframes and high fidelity UI</li>
         <li>Onboarding designed to get users to their first workout fast</li>
         <li>Progress dashboard that turns data into daily motivation</li>
         <li>Meal planning that makes healthy choices the easy ones</li>
@@ -79,13 +80,13 @@
         "Creative Camel helped us build our online presence and increase our sales by 30%." — Raghavendra Heble, PK Industries
       </div>
     </div>
-    <div class="shots glow-amber">
-      <span class="cover-word serif-accent" style="font-size:110px;margin:auto">PK</span>
+    <div class="shots tint-cream">
+      <span class="cover-word" style="font-size:110px;margin:auto">PK</span>
     </div>
   </article>
 
   <article class="project reveal" id="phm-solutions">
-    <div class="shots glow-violet">
+    <div class="shots tint-ink">
       <img src="assets/img/fittrack-category.png" alt="Workout category selection screen">
       <img src="assets/img/fittrack-meal.png" alt="Meal plan selection screen">
     </div>
@@ -108,16 +109,15 @@
 </main>
 
 <section class="cta-band">
-  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap reveal">
-    <h2>Your project could be <span class="serif-accent">next</span></h2>
+    <h2>Your project could be <span class="light">next</span></h2>
     <p>Tell us what you're building — we'll tell you how design can move it forward.</p>
     <a class="btn btn-primary" href="contact.html">Start a project</a>
   </div>
 </section>
 
 <footer class="site">
-  <div class="wrap">
+  <div class="wrap" style="padding:0">
     <div class="foot-grid">
       <div class="foot-brand">
         <img src="assets/img/logo-camel-heart-light.png" alt="Creative Camel Studio">
@@ -144,6 +144,6 @@
   </div>
 </footer>
 
-<script src="assets/script.js"></script>
+<script src="assets/script.js?v=2"></script>
 </body>
 </html>

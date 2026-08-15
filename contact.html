@@ -12,35 +12,36 @@
 <link rel="icon" type="image/png" href="assets/img/logo-camel-face.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=26">
 </head>
 <body>
 
-<nav class="nav" aria-label="Main">
-  <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><img src="assets/img/logo-camel-face-light.png" alt="Creative Camel logo">Creative Camel</a>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="workshops.html">Workshops &amp; Mentoring</a>
-      <a href="contact.html" class="active">Contact</a>
-    </div>
-    <a class="nav-cta" href="#form">Book a free UX audit</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-  </div>
-</nav>
+<div class="hero-card">
+  <div class="bubble" style="width:20px;height:20px;top:36px;left:6%;opacity:.5"></div>
+  <div class="bubble" style="width:16px;height:16px;top:70px;right:10%;opacity:.55"></div>
 
-<header class="page-hero">
-  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span>Contact</span>
-    <h1>Let's make something <em>great</em></h1>
+    <nav class="nav-inner" aria-label="Main">
+      <a class="brand" href="index.html"><img src="assets/img/logo-camel-face.png" alt="Creative Camel logo">Creative Camel</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="workshops.html">Workshops &amp; Mentoring</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <a class="nav-cta" href="#form">Book a free UX audit</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </nav>
+  </div>
+
+  <div class="wrap page-hero">
+    <h1>Let's make something <span class="light">great</span></h1>
     <p class="hero-sub">Tell us about your project or workshop — we'll get in touch within 24 hours.</p>
   </div>
-</header>
+</div>
 
-<section class="section" style="padding-top:30px">
+<section class="section">
   <div class="wrap contact-grid">
     <div class="contact-info reveal">
       <h2>Talk to us</h2>
@@ -91,7 +92,7 @@
 </section>
 
 <footer class="site">
-  <div class="wrap">
+  <div class="wrap" style="padding:0">
     <div class="foot-grid">
       <div class="foot-brand">
         <img src="assets/img/logo-camel-heart-light.png" alt="Creative Camel Studio">
@@ -118,6 +119,6 @@
   </div>
 </footer>
 
-<script src="assets/script.js"></script>
+<script src="assets/script.js?v=2"></script>
 </body>
 </html>

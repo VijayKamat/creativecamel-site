@@ -1,0 +1,101 @@
+<svg viewBox="0 0 640 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated Creative Camel mascot wearing sunglasses and holding a notebook">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F2E1B8"/>
+      <stop offset="100%" stop-color="#D9BD86"/>
+    </linearGradient>
+    <linearGradient id="humpGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6E8C6"/>
+      <stop offset="100%" stop-color="#E2C795"/>
+    </linearGradient>
+    <linearGradient id="legBackGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C7A96C"/>
+      <stop offset="100%" stop-color="#BC9C5D"/>
+    </linearGradient>
+    <linearGradient id="legFrontGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EEDCAE"/>
+      <stop offset="100%" stop-color="#DDC08A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="330" cy="706" rx="185" ry="24" fill="#241C10" opacity=".13"/>
+
+  <!-- back leg -->
+  <path d="M270 470 q-6 110 -2 190 q0 14 14 14 h34 q12 0 12-14 q4-96 -6-190 z" fill="url(#legBackGrad)"/>
+  <rect x="272" y="664" width="60" height="26" rx="13" fill="#241C10"/>
+
+  <!-- front leg -->
+  <path d="M392 476 q10 106 8 186 q0 16 16 16 h34 q14 0 13-16 q6-100 -14-190 z" fill="url(#legFrontGrad)"/>
+  <rect x="392" y="668" width="62" height="26" rx="13" fill="#241C10"/>
+
+  <!-- tail -->
+  <path d="M226 430 q-40 20 -34 78" fill="none" stroke="#D9BD86" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="192" cy="508" r="13" fill="#241C10"/>
+
+  <!-- body -->
+  <ellipse cx="340" cy="470" rx="168" ry="128" fill="url(#bodyGrad)"/>
+  <!-- hump -->
+  <ellipse cx="300" cy="366" rx="112" ry="86" fill="url(#humpGrad)"/>
+  <path d="M198 400 q100 66 210 24" fill="none" stroke="#C7A96C" stroke-width="6" stroke-linecap="round" opacity=".45"/>
+
+  <!-- ink vest -->
+  <path d="M234 452 q100 60 214 6 q4 66 -14 108 q-96 40 -190 2 q-16-52 -10-116z" fill="#241C10"/>
+  <path d="M234 452 q100 60 214 6" fill="none" stroke="#3A2C18" stroke-width="4" opacity=".5"/>
+  <!-- vest buttons -->
+  <circle cx="330" cy="512" r="6" fill="#F2E1B8"/>
+  <circle cx="330" cy="540" r="6" fill="#F2E1B8"/>
+
+  <!-- neck -->
+  <path d="M414 400 C 470 360, 476 270, 430 210 C 410 184, 400 168, 408 140"
+        fill="none" stroke="url(#bodyGrad)" stroke-width="86" stroke-linecap="round"/>
+
+  <!-- notebook (held at chest) -->
+  <g transform="rotate(-8 210 470)">
+    <rect x="150" y="420" width="120" height="150" rx="14" fill="#FFFFFF"/>
+    <rect x="150" y="420" width="120" height="150" rx="14" fill="none" stroke="#241C10" stroke-width="4" opacity=".08"/>
+    <rect x="170" y="450" width="80" height="8" rx="4" fill="#E7DFCB"/>
+    <rect x="170" y="472" width="80" height="8" rx="4" fill="#E7DFCB"/>
+    <rect x="170" y="494" width="56" height="8" rx="4" fill="#E7DFCB"/>
+  </g>
+  <!-- pencil -->
+  <g transform="rotate(38 262 452)">
+    <rect x="252" y="392" width="16" height="92" rx="6" fill="#241C10"/>
+    <path d="M252 392 l16 0 l-8 -20 z" fill="#F2E1B8"/>
+  </g>
+
+  <!-- arm holding notebook -->
+  <path d="M300 456 q-40 10 -66 -6" fill="none" stroke="#DDC08A" stroke-width="34" stroke-linecap="round"/>
+
+  <!-- head -->
+  <g>
+    <ellipse cx="452" cy="118" rx="88" ry="78" fill="url(#bodyGrad)"/>
+    <!-- snout -->
+    <ellipse cx="486" cy="168" rx="46" ry="36" fill="#EAD6A8"/>
+    <ellipse cx="472" cy="182" rx="7" ry="10" fill="#241C10" opacity=".55"/>
+    <ellipse cx="500" cy="182" rx="7" ry="10" fill="#241C10" opacity=".55"/>
+    <path d="M470 196 q16 14 32 0" fill="none" stroke="#241C10" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+
+    <!-- ears -->
+    <path d="M404 80 q-36 -14 -34 -46 q2 -18 20 -18 q26 2 32 32 q4 18 -18 32z" fill="#EAD6A8"/>
+    <path d="M404 80 q-24 -10 -24 -34 q0 -10 12 -10 q16 2 20 22 q3 12 -8 22z" fill="#DDC08A"/>
+    <path d="M496 66 q34 -18 28 -50 q-4 -18 -22 -16 q-26 4 -28 34 q-2 18 22 32z" fill="#EAD6A8"/>
+    <path d="M496 66 q22 -12 18 -36 q-2 -10 -14 -8 q-16 4 -16 24 q0 12 12 20z" fill="#DDC08A"/>
+
+    <!-- sunglasses -->
+    <g>
+      <rect x="392" y="96" width="70" height="46" rx="20" fill="#241C10"/>
+      <rect x="454" y="96" width="70" height="46" rx="20" fill="#241C10"/>
+      <rect x="458" y="112" width="14" height="8" rx="4" fill="#241C10"/>
+      <path d="M392 108 q-16 4 -22 18" fill="none" stroke="#241C10" stroke-width="8" stroke-linecap="round"/>
+      <ellipse cx="414" cy="112" rx="10" ry="7" fill="#ffffff" opacity=".18"/>
+      <ellipse cx="476" cy="112" rx="10" ry="7" fill="#ffffff" opacity=".18"/>
+    </g>
+  </g>
+
+  <!-- decorative bubbles -->
+  <circle cx="86" cy="140" r="10" fill="#ffffff" opacity=".55"/>
+  <circle cx="120" cy="230" r="16" fill="#ffffff" opacity=".4"/>
+  <circle cx="560" cy="560" r="13" fill="#ffffff" opacity=".5"/>
+  <circle cx="580" cy="230" r="9" fill="#ffffff" opacity=".6"/>
+</svg>

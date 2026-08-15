@@ -12,45 +12,46 @@
 <link rel="icon" type="image/png" href="assets/img/logo-camel-face.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=26">
 </head>
 <body>
 
-<nav class="nav" aria-label="Main">
-  <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><img src="assets/img/logo-camel-face-light.png" alt="Creative Camel logo">Creative Camel</a>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="workshops.html" class="active">Workshops &amp; Mentoring</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <a class="nav-cta" href="contact.html">Book a workshop</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-  </div>
-</nav>
+<div class="hero-card">
+  <div class="bubble" style="width:20px;height:20px;top:36px;left:6%;opacity:.5"></div>
+  <div class="bubble" style="width:16px;height:16px;top:70px;right:10%;opacity:.55"></div>
 
-<header class="page-hero">
-  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span>Workshops &amp; Mentoring</span>
-    <h1>We teach <em>design</em></h1>
+    <nav class="nav-inner" aria-label="Main">
+      <a class="brand" href="index.html"><img src="assets/img/logo-camel-face.png" alt="Creative Camel logo">Creative Camel</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="workshops.html" class="active">Workshops &amp; Mentoring</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a class="nav-cta" href="contact.html">Book a workshop</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </nav>
+  </div>
+
+  <div class="wrap page-hero">
+    <h1>We teach <span class="light">design</span></h1>
     <p class="hero-sub">We empower teams and campuses to master design thinking — an essential mindset for innovation and growth.</p>
-    <div class="stat-strip" style="justify-content:flex-start">
+    <div class="ws-stats" style="margin-top:30px">
       <div><b>905+</b><span>Happy participants</span></div>
       <div><b>5+</b><span>Workshops delivered</span></div>
       <div><b>5+</b><span>Years of experience</span></div>
     </div>
   </div>
-</header>
+</div>
 
 <section class="section">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
         <span class="kicker">In the room</span>
-        <h2>Hands-on, from the first <span class="serif-accent">minute</span></h2>
+        <h2>Hands on, from the first <span class="serif-accent">minute</span></h2>
       </div>
     </div>
     <div class="gallery reveal">
@@ -103,7 +104,7 @@
         <span class="icon">🚀</span>
         <h3>Aspiring Individuals</h3>
         <span class="aud">1:1 bootcamps and mentoring</span>
-        <p>Personal training to up-skill and equip you to reach your highest potential in the field of design.</p>
+        <p>Personal training to upskill and equip you to reach your highest potential in the field of design.</p>
         <ul>
           <li>What is design?</li><li>Why UX matters</li>
           <li>Design thinking</li><li>UI/UX best practices</li>
@@ -127,7 +128,7 @@
     <div class="mini-quotes reveal">
       <div class="mini-quote"><p>"Learning UI/UX is fun. So happy attending the workshop — I learnt so many wonderful concepts I didn't know existed!"</p><b>Swati</b></div>
       <div class="mini-quote"><p>"It was an extraordinary workshop. We enjoyed a lot and didn't realize how the time flew by. I wish it was longer."</p><b>Pradhan</b></div>
-      <div class="mini-quote"><p>"Very engaging workshop. I loved the hands-on approach and building the app in real time."</p><b>Sakshi</b></div>
+      <div class="mini-quote"><p>"Very engaging workshop. I loved the hands on approach and building the app in real time."</p><b>Sakshi</b></div>
       <div class="mini-quote"><p>"All the concepts were taught really well. Good experience learning UI/UX — I learnt many new concepts."</p><b>Sameer</b></div>
       <div class="mini-quote"><p>"The workshop brought out a new avenue for me and I find this field fascinating now. I want to enter this design world."</p><b>Suraj</b></div>
       <div class="mini-quote"><p>"Learning Figma was fun and I am going to try building my own app. Thank you for an amazing workshop."</p><b>Prajna</b></div>
@@ -137,16 +138,15 @@
 </section>
 
 <section class="cta-band">
-  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap reveal">
-    <h2>Bring a workshop to your <span class="serif-accent">campus or team</span></h2>
+    <h2>Bring a workshop to your <span class="light">campus or team</span></h2>
     <p>Tell us about your group and we'll design a session around them.</p>
     <a class="btn btn-primary" href="contact.html">Book a workshop</a>
   </div>
 </section>
 
 <footer class="site">
-  <div class="wrap">
+  <div class="wrap" style="padding:0">
     <div class="foot-grid">
       <div class="foot-brand">
         <img src="assets/img/logo-camel-heart-light.png" alt="Creative Camel Studio">
@@ -173,6 +173,6 @@
   </div>
 </footer>
 
-<script src="assets/script.js"></script>
+<script src="assets/script.js?v=2"></script>
 </body>
 </html>
