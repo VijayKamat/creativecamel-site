@@ -199,4 +199,57 @@
       }
     });
   }
+
+  // Looping preview videos stay still for users who prefer reduced motion
+  if (reduceMotion) {
+    document.querySelectorAll('video[autoplay]').forEach(function (v) {
+      v.removeAttribute('autoplay');
+      v.pause();
+    });
+  }
+
+  // Cursor companion — the native cursor stays; a little dot trails behind it
+  // with a springy catch-up, and blooms into a ring over anything clickable
+  if (!reduceMotion && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var cursorDot = document.createElement('div');
+    cursorDot.className = 'cursor-dot cursor-hidden';
+    document.body.appendChild(cursorDot);
+
+    var mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
+    var cursorShown = false, trailRunning = false;
+
+    function trailTick() {
+      dotX += (mouseX - dotX) * 0.16;
+      dotY += (mouseY - dotY) * 0.16;
+      cursorDot.style.transform = 'translate(' + dotX + 'px,' + dotY + 'px) translate(-50%,-50%)';
+      requestAnimationFrame(trailTick);
+    }
+
+    document.addEventListener('mousemove', function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!cursorShown) {
+        if (!trailRunning) {
+          dotX = mouseX; dotY = mouseY;
+          trailRunning = true;
+          requestAnimationFrame(trailTick);
+        }
+        cursorDot.classList.remove('cursor-hidden');
+        cursorShown = true;
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function () {
+      cursorDot.classList.add('cursor-hidden');
+      cursorShown = false;
+    });
+
+    var cursorHoverSelector = 'a, button, input, textarea, select, .faq-q, .nav-toggle, [role="button"]';
+    document.addEventListener('mouseover', function (e) {
+      if (e.target.closest && e.target.closest(cursorHoverSelector)) cursorDot.classList.add('cursor-hover');
+    });
+    document.addEventListener('mouseout', function (e) {
+      if (e.target.closest && e.target.closest(cursorHoverSelector)) cursorDot.classList.remove('cursor-hover');
+    });
+  }
 })();
