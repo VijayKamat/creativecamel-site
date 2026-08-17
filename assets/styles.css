@@ -451,6 +451,7 @@ footer.site{border-radius:32px;padding:56px 44px 34px;background:var(--ink);marg
   display:flex;align-items:center;justify-content:center;color:var(--ink);
 }
 .why-row .wicon svg{width:26px;height:26px}
+.why-row .wicon b{font-family:var(--font-display);font-weight:800;font-size:20px}
 .why-row h3{font-size:17px;margin-bottom:4px}
 .why-row p{color:var(--grey);font-size:14.5px}
 .showcase-img{display:block;max-width:620px;width:100%;margin:44px auto 0}
@@ -523,6 +524,15 @@ footer.site{border-radius:32px;padding:56px 44px 34px;background:var(--ink);marg
   background:var(--yellow-50);border:1px solid rgba(240,164,21,.35);
   padding:6px 13px;border-radius:999px;font-size:12.5px;color:var(--ink-soft);white-space:nowrap;
 }
+/* Bigger role chips for the "Who should attend" section */
+.roles{gap:12px}
+.roles li{font-size:14.5px;padding:11px 20px}
+/* Certificate spotlight photo */
+.cert-photo{border-radius:18px;max-width:440px;width:100%;margin:0 auto;box-shadow:var(--shadow-md)}
+.blu-grid .kicker{margin-bottom:10px;display:inline-block}
+.blu-grid h2{margin-bottom:16px}
+.blu-grid .btn{margin-top:10px}
+
 .ticket-stub{
   flex:none;width:230px;position:relative;
   border-left:2px dashed var(--line);
