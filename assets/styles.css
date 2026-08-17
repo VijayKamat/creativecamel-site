@@ -564,7 +564,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
    so the fragile "20% in yellow" absolute-positioning math never has to handle a wrapped
    2-row state at some in-between viewport width. */
 @media (max-width:1250px){
-  .stat-cards{flex-wrap:wrap;position:static;margin-top:44px;padding:0;justify-content:center}
+  .stat-cards{flex-wrap:wrap;position:static;margin-top:44px;padding:0;justify-content:center;gap:44px}
   /* Cards stay fully inside the yellow card at this width (no overhang) — the desktop-only
      extra top padding on #projects would just be excess whitespace here. */
   #projects{padding-top:100px}
@@ -574,6 +574,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   .hero{padding-bottom:60px}
   .hero-illustration{order:-1;max-width:340px;margin:0 auto}
   .mark-wrap{max-width:340px;margin:0 auto}
+  /* Single-column hero centers everything under the centered camel */
+  .hero-copy{text-align:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-btns{justify-content:center}
   .cards-3,.services,.quotes{grid-template-columns:1fr 1fr}
   /* Pinboard leaves the absolute canvas and stacks to one straight column of tilted notes */
   .pinboard{height:auto;background-size:14px 100px;display:flex;flex-direction:column;align-items:center;gap:26px;padding:10px 0}
@@ -620,7 +624,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   .mini-quotes{columns:1}
   .foot-grid{grid-template-columns:1fr}
   .project .shots{min-height:300px}
-  .stat-cards{flex-direction:column}
+  .stat-cards{flex-direction:column;align-items:center;gap:48px}
   footer.site{padding:40px 26px 28px}
   .cta-band{padding:70px 26px}
 }
