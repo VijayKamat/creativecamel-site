@@ -54,7 +54,9 @@ h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;line-he
 .serif-accent{color:var(--yellow-600)}
 
 /* ── Nav (lives inside the hero card, scrolls with the page) ── */
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:8px 4px 0}
+/* position:relative + z-index anchor the mobile dropdown to the nav row (not the whole
+   hero card) and keep it painted above the hero content below */
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:8px 4px 0;position:relative;z-index:20}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--ink)}
 .brand img{width:34px}
 .nav-links{display:flex;gap:32px;font-size:15px;color:var(--ink-soft)}
