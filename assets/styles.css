@@ -526,6 +526,15 @@ footer.site{border-radius:32px;padding:56px 44px 34px;background:var(--ink);marg
 .ticket-main .aud{color:var(--yellow-600);font-size:13.5px;font-weight:600;display:block;margin-bottom:12px}
 .ticket-main p{color:var(--grey);font-size:14.5px;max-width:560px}
 .topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+/* On pointer devices the ticket keeps its topics tucked away until you hover
+   (or tab into) it — touch devices always show them since they can't hover */
+@media (hover:hover){
+  .ticket .topics{
+    max-height:0;opacity:0;overflow:hidden;margin-top:0;
+    transition:max-height .55s var(--ease-spring),opacity .35s var(--ease-tap),margin-top .55s var(--ease-spring);
+  }
+  .ticket:hover .topics,.ticket:focus-within .topics{max-height:220px;opacity:1;margin-top:16px}
+}
 .topics li{
   background:var(--yellow-50);border:1px solid rgba(240,164,21,.35);
   padding:6px 13px;border-radius:999px;font-size:12.5px;color:var(--ink-soft);white-space:nowrap;
