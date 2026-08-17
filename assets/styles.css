@@ -108,7 +108,7 @@ h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;line-he
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center;position:relative;min-width:0}
 .hero-copy{position:relative;z-index:2;min-width:0}
 .hero h1{margin:0 0 22px}
-.hero-sub{color:var(--ink-soft);opacity:.75;font-size:18px;max-width:460px;margin:0 0 34px}
+.hero-sub{color:var(--ink-soft);font-size:18px;max-width:460px;margin:0 0 34px}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
 .hero-illustration{position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
 .mark-wrap{position:relative;width:100%;max-width:540px;cursor:pointer}
@@ -335,9 +335,10 @@ h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;line-he
 .ws-banner h2{margin-bottom:16px}
 .ws-banner p{color:var(--grey);margin-bottom:28px;max-width:460px}
 .ws-photo{border-radius:20px;position:relative;z-index:1;box-shadow:var(--shadow-md)}
-.ws-stats{display:flex;gap:40px;margin-bottom:30px}
+.ws-stats{display:flex;flex-wrap:wrap;gap:24px 40px;margin-bottom:30px}
 .ws-stats b{display:block;font-family:var(--font-display);font-weight:800;font-size:26px}
-.ws-stats span{color:var(--grey);font-size:13.5px}
+/* ws-stats always sit on yellow surfaces — full ink-soft, not grey, for contrast */
+.ws-stats span{color:var(--ink-soft);font-size:13.5px}
 
 /* ── Testimonials ────────────────────────── */
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
