@@ -337,8 +337,12 @@ h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;line-he
 .ws-photo{border-radius:20px;position:relative;z-index:1;box-shadow:var(--shadow-md)}
 .ws-stats{display:flex;flex-wrap:wrap;gap:24px 40px;margin-bottom:30px}
 .ws-stats b{display:block;font-family:var(--font-display);font-weight:800;font-size:26px}
+/* Workshops page hero gets display-size numbers; the homepage banner keeps 26px */
+.page-hero .ws-stats b{font-size:70px;letter-spacing:-.02em;line-height:1.1}
 /* ws-stats always sit on yellow surfaces — full ink-soft, not grey, for contrast */
 .ws-stats span{color:var(--ink-soft);font-size:13.5px}
+/* count-up spans inside the number keep the number's own size and color */
+.ws-stats b span{font-size:inherit;color:inherit}
 
 /* ── Testimonials ────────────────────────── */
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
