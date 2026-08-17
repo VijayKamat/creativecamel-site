@@ -452,6 +452,12 @@ footer.site{border-radius:32px;padding:56px 44px 34px;background:var(--ink);marg
 }
 .why-row .wicon svg{width:26px;height:26px}
 .why-row .wicon b{font-family:var(--font-display);font-weight:800;font-size:20px}
+.day-tag{
+  display:inline-block;vertical-align:middle;margin-left:10px;
+  background:var(--yellow-50);border:1px solid rgba(240,164,21,.35);color:var(--yellow-600);
+  font-family:var(--font-display);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;
+}
 .why-row h3{font-size:17px;margin-bottom:4px}
 .why-row p{color:var(--grey);font-size:14.5px}
 .showcase-img{display:block;max-width:620px;width:100%;margin:44px auto 0}
