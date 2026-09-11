@@ -81,7 +81,7 @@ h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;line-he
 /* ── Buttons ─────────────────────────────── */
 .btn{
   display:inline-block;border-radius:999px;font-weight:600;font-size:16px;cursor:pointer;text-align:center;
-  transition:transform .3s var(--ease-spring),box-shadow .3s var(--ease-spring),border-color .3s var(--ease-spring),background-color .3s var(--ease-spring);
+  transition:transform .3s var(--ease-spring),box-shadow .3s var(--ease-spring),border-color .3s var(--ease-spring),background-color .3s var(--ease-spring),color .35s var(--ease-spring);
 }
 .btn:active{transition:transform .1s var(--ease-tap)}
 .btn-primary{
@@ -96,6 +96,37 @@ h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;line-he
 }
 .btn-ghost:hover{border-color:var(--ink)}
 .btn-ghost:active{transform:scale(.96);background:var(--yellow-50)}
+
+/* Solid light CTA — visual peer to .btn-primary, for pairing on dark/yellow grounds */
+.btn-light{
+  background:var(--white);color:var(--ink);padding:17px 34px;
+  box-shadow:var(--shadow-md);
+}
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-light:active{transform:translateY(-2px) scale(.96)}
+
+/* Circular wipe — the inverse colour grows from wherever the pointer entered the
+   button (and retracts toward wherever it left). Its diameter is set per-button in
+   script.js from the true distance to the furthest corner, so it covers wide
+   buttons (the full-width form submit) as well as the small pills.
+   Sits at z-index:-1 inside an isolated stacking context, so it paints over the
+   button's own background but stays under the label. */
+.btn-primary,.btn-light{position:relative;overflow:hidden;isolation:isolate}
+.btn-primary::before,.btn-light::before{
+  content:"";position:absolute;z-index:-1;
+  left:var(--wipe-x,50%);top:var(--wipe-y,50%);
+  width:var(--wipe-d,520px);height:var(--wipe-d,520px);
+  margin:calc(var(--wipe-d,520px) / -2) 0 0 calc(var(--wipe-d,520px) / -2);
+  border-radius:50%;
+  transform:scale(0);
+  transition:transform .5s var(--ease-spring);
+}
+.btn-primary::before{background:var(--white)}
+.btn-light::before{background:var(--ink)}
+.btn-primary:hover::before,.btn-primary:focus-visible::before,
+.btn-light:hover::before,.btn-light:focus-visible::before{transform:scale(1)}
+.btn-primary:hover,.btn-primary:focus-visible{color:var(--ink)}
+.btn-light:hover,.btn-light:focus-visible{color:var(--white)}
 
 /* ── Hero card ───────────────────────────── */
 .hero-card{

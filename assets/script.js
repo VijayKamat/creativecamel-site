@@ -252,4 +252,27 @@
       if (e.target.closest && e.target.closest(cursorHoverSelector)) cursorDot.classList.remove('cursor-hover');
     });
   }
+
+  // Filled buttons: record where the pointer crossed the edge, so the CSS wipe
+  // grows from that exact point rather than always from the centre.
+  var wipeButtons = document.querySelectorAll('.btn-primary, .btn-light');
+  var setWipeOrigin = function (el, e) {
+    var r = el.getBoundingClientRect();
+    var x = e.clientX - r.left, y = e.clientY - r.top;
+    el.style.setProperty('--wipe-x', x + 'px');
+    el.style.setProperty('--wipe-y', y + 'px');
+    // Diameter = twice the distance to the furthest corner, so the circle always
+    // clears the button no matter which edge the pointer came in through.
+    var far = Math.max(
+      Math.hypot(x, y), Math.hypot(r.width - x, y),
+      Math.hypot(x, r.height - y), Math.hypot(r.width - x, r.height - y)
+    );
+    el.style.setProperty('--wipe-d', Math.ceil(far * 2) + 'px');
+  };
+  for (var wi = 0; wi < wipeButtons.length; wi++) {
+    (function (el) {
+      el.addEventListener('pointerenter', function (e) { setWipeOrigin(el, e); });
+      el.addEventListener('pointerleave', function (e) { setWipeOrigin(el, e); });
+    })(wipeButtons[wi]);
+  }
 })();
