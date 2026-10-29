@@ -57,8 +57,25 @@ h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;line-he
 /* position:relative + z-index anchor the mobile dropdown to the nav row (not the whole
    hero card) and keep it painted above the hero content below */
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:8px 4px 0;position:relative;z-index:20}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--ink)}
-.brand img{width:34px}
+/* Nav — the same bar as the 2026 home and contact pages. These rules mirror the
+   ones in concept.css exactly, so the header does not jump when you cross from a
+   page on that stylesheet to a page still on this one. */
+.navwrap{max-width:1200px;margin:0 auto;padding:0 40px;width:100%}
+nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600;
+  position:relative;z-index:20;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);
+  font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--ink);margin-right:auto}
+.brand img{width:30px;height:30px;object-fit:contain}
+nav a.lnk{opacity:.75;transition:opacity .22s var(--ease-spring)}
+nav a.lnk.on{opacity:1;border-bottom:2px solid var(--ink);padding-bottom:3px}
+@media (hover:hover) and (pointer:fine){nav a.lnk:hover{opacity:1}}
+/* same breakpoint and the same two rules concept.css uses: the bar wraps to a
+   second line rather than collapsing to a hamburger, so both stylesheets behave
+   identically on a phone */
+@media (max-width:940px){
+  .navwrap{padding:0}
+  nav{flex-wrap:wrap;gap:16px}
+}
 .nav-links{display:flex;gap:32px;font-size:15px;color:var(--ink-soft)}
 .nav-links a{position:relative;padding:4px 0;font-weight:500;transition:opacity .2s var(--ease-tap)}
 .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:currentColor;transition:right .25s var(--ease-spring)}
