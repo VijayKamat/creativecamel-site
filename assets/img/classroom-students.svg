@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 72" width="448" height="72" role="img" aria-label="Workshop participants">
+  <!-- one row, drawn by hand rather than struck with a compass: every dome is
+       slightly lopsided, the baseline wanders, and the stroke weight varies -->
+  <g fill="none" stroke="#241C10" stroke-linecap="round">
+    <path d="M6 69 C5 49, 39 46, 42 68"   stroke-width="4.9"/>
+    <path d="M49 70 C46 37, 87 40, 84 68"  stroke-width="5.4"/>
+    <path d="M93 67 C96 47, 141 43, 138 70" stroke-width="4.6"/>
+    <path d="M147 69 C144 41, 181 44, 184 67" stroke-width="5.1"/>
+    <path d="M191 70 C194 51, 221 48, 218 68" stroke-width="4.4"/>
+    <path d="M227 67 C223 36, 268 39, 265 70" stroke-width="5.5"/>
+    <path d="M273 69 C276 45, 311 42, 308 67" stroke-width="4.8"/>
+    <path d="M317 70 C313 47, 363 44, 366 68" stroke-width="5.2"/>
+    <path d="M372 67 C375 40, 407 43, 404 70" stroke-width="4.7"/>
+    <path d="M412 69 C409 48, 442 45, 445 67" stroke-width="5.0"/>
+  </g>
+</svg>

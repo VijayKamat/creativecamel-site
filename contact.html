@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contact — Creative Camel Studio</title>
 <meta name="description" content="Start a project or book a design workshop with Creative Camel Studio. We'll get back to you within 24 hours.">
 <meta property="og:title" content="Contact — Creative Camel Studio">
@@ -12,45 +12,121 @@
 <link rel="icon" type="image/png" href="assets/img/logo-camel-face.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=62">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/concept.css?v=1">
+<style>
+/* ── contact page only: the chrome comes from concept.css, this is the form ── */
+
+/* an inner page needs a title, not a stage, so the card stops at its content */
+.hero-card.page{min-height:auto;padding-bottom:58px}
+.page-head{position:relative;z-index:2;padding:46px 0 4px;max-width:46ch}
+.page-head h1{margin-bottom:14px}
+
+/* no top padding of its own: section's 146px already sets the gap below the
+   hero card, and matching it keeps the two pages on the same vertical rhythm */
+.contact-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:28px;
+  align-items:start;padding:0 0 96px}
+
+/* left column — the direct routes, for anyone who would rather not fill a form */
+.c-card{background:var(--white);border:1px solid var(--line);border-radius:24px;
+  padding:30px 32px 34px;box-shadow:var(--shadow-sm)}
+.c-card h2{font-size:clamp(23px,2.4vw,30px);margin-bottom:10px}
+.c-card .lead{font-size:15.5px;color:var(--grey);margin:0 0 20px}
+.c-line{display:flex;gap:14px;align-items:flex-start;padding:17px 0;
+  border-top:1px solid var(--line)}
+.c-line .ic{width:38px;height:38px;flex:0 0 auto;border-radius:50%;
+  background:var(--yellow-50);border:1px solid var(--yellow-100);
+  display:grid;place-items:center;font-size:16px}
+.c-line .lbl{display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--grey-light);margin-bottom:4px}
+.c-line a{font-size:15.5px;font-weight:600;border-bottom:1px solid var(--line-2);
+  padding-bottom:1px;transition:border-color .22s var(--ease-tap)}
+.c-line .val{font-size:15.5px;color:var(--ink-soft)}
+@media(hover:hover) and (pointer:fine){.c-line a:hover{border-color:var(--ink)}}
+
+/* right column — the form itself */
+.form-card{background:var(--white);border:1px solid var(--line);border-radius:24px;
+  padding:32px 34px 36px;box-shadow:var(--shadow-sm)}
+.form-card h2{font-size:clamp(21px,2.1vw,26px);margin-bottom:7px}
+.form-card .fc-sub{font-size:14.5px;color:var(--grey);margin:0 0 26px}
+.field{margin-bottom:17px}
+.field label{display:block;font-size:11px;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--grey);margin-bottom:8px}
+.field input,.field select,.field textarea{
+  width:100%;font:inherit;font-size:15px;color:var(--ink);
+  background:var(--cream);border:1px solid var(--line);border-radius:13px;
+  padding:13px 15px;transition:border-color .2s var(--ease-tap),box-shadow .2s var(--ease-tap),
+                               background-color .2s var(--ease-tap)}
+.field textarea{min-height:124px;resize:vertical;line-height:1.6}
+/* the native select arrow does not follow the type, so draw one that does */
+.field select{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%236B6455' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;background-size:12px;
+  padding-right:40px}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;background:var(--white);border-color:var(--yellow-600);
+  box-shadow:0 0 0 4px rgba(247,183,51,.22)}
+.field input::placeholder,.field textarea::placeholder{color:var(--grey-light)}
+.form-card .btn{width:100%;border:none;font-family:inherit;text-align:center;margin-top:6px}
+.form-note{font-size:12.5px;color:var(--grey-light);margin:14px 0 0;text-align:center}
+
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr;gap:20px;padding:0 0 70px}
+  .hero-card.page{padding-bottom:40px}
+  .page-head{padding-top:30px}
+}
+</style>
 </head>
 <body>
 
-<div class="hero-card">
-  <div class="bubble" style="width:20px;height:20px;top:36px;left:6%;opacity:.5"></div>
-  <div class="bubble" style="width:16px;height:16px;top:70px;right:10%;opacity:.55"></div>
+<!-- ══════ HEADER — same card, same nav as the home page ══════ -->
+<div class="hero">
+  <div class="hero-card page">
+    <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+    <span class="orb o4"></span><span class="orb o5"></span>
 
-  <div class="wrap">
-    <nav class="nav-inner" aria-label="Main">
-      <a class="brand" href="index.html"><img src="assets/img/logo-camel-face.png" alt="Creative Camel logo">Creative Camel</a>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="workshops.html">Workshops &amp; Mentoring</a>
-        <a href="contact.html" class="active">Contact</a>
+    <div class="hwrap">
+      <nav>
+        <a class="brand" href="index.html"><img src="assets/img/logo-camel-face.png" alt="">Creative Camel</a>
+        <a class="lnk" href="index.html#programmes">Programmes</a>
+        <a class="lnk" href="index.html#projects">Projects</a>
+        <a class="lnk" href="index.html#about">About</a>
+        <a class="lnk on" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="page-head">
+        <div class="kicker r">Get in touch</div>
+        <h1 class="r d1">Let's make something <em class="hl">great</em></h1>
+        <p class="sub r d2">Tell us about your project, your campus or your team — what you have in mind and roughly when. We reply within 24 hours.</p>
       </div>
-      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-    </nav>
-  </div>
-
-  <div class="wrap page-hero">
-    <h1>Let's make something <span class="light">great</span></h1>
-    <p class="hero-sub">Tell us about your project or workshop — we'll get in touch within 24 hours.</p>
+    </div>
   </div>
 </div>
 
-<section class="section">
-  <div class="wrap contact-grid">
-    <div class="contact-info reveal">
+<section class="wrap">
+  <div class="contact-grid">
+
+    <div class="c-card rv">
       <h2>Talk to us</h2>
-      <p>Prefer to reach us directly? Email us — whatever works for you.</p>
-      <div class="c-line"><span class="ic">✉️</span><div><span>Projects &amp; workshops</span><a href="mailto:info@creativecamel.in">info@creativecamel.in</a></div></div>
-      <div class="c-line"><span class="ic">📍</span><div><span>Studio</span>Bengaluru, India</div></div>
+      <p class="lead">Would rather not fill in a form? These reach the same place.</p>
+      <div class="c-line">
+        <span class="ic" aria-hidden="true">✉️</span>
+        <div>
+          <span class="lbl">Projects &amp; workshops</span>
+          <a href="mailto:info@creativecamel.in">info@creativecamel.in</a>
+        </div>
+      </div>
+      <div class="c-line">
+        <span class="ic" aria-hidden="true">📍</span>
+        <div>
+          <span class="lbl">Studio</span>
+          <span class="val">Bengaluru, India</span>
+        </div>
+      </div>
     </div>
 
-    <form class="form-card reveal reveal-d1" id="form" action="https://formsubmit.co/info@creativecamel.in" method="POST">
-      <h3>Send a message</h3>
+    <form class="form-card rv" id="form" action="https://formsubmit.co/info@creativecamel.in" method="POST">
+      <h2>Send a message</h2>
       <p class="fc-sub">We'll get back to you within 24 hours.</p>
       <input type="hidden" name="_subject" value="New enquiry from creativecamel.in">
       <input type="hidden" name="_captcha" value="false">
@@ -82,38 +158,151 @@
         <label for="f-msg">Message</label>
         <textarea id="f-msg" name="message" placeholder="Tell us a little about what you have in mind…"></textarea>
       </div>
-      <button class="btn btn-primary" type="submit" style="width:100%;border:none;font-family:inherit">Get in touch</button>
+      <button class="btn btn-dark" type="submit">Get in touch →</button>
       <p class="form-note">This form sends straight to info@creativecamel.in.</p>
     </form>
+
   </div>
 </section>
 
-<footer class="site">
-  <div class="wrap" style="padding:0">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="assets/img/logo-camel-heart-light.png" alt="Creative Camel Studio">
-        <div class="tagline">Designing with a heart</div>
-      </div>
-      <div class="foot-col">
-        <h4>Studio</h4>
-        <a href="index.html">Home</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="workshops.html">Workshops &amp; Mentoring</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="foot-col">
-        <h4>Get in touch</h4>
-        <a href="mailto:info@creativecamel.in">info@creativecamel.in</a>
-      </div>
+<!-- ══════ FOOTER — identical to the home page ══════ -->
+<footer>
+  <div class="foot-cta">
+    <div>
+      <h3>Bring design thinking to your campus or team</h3>
+      <p>Tell us the group, the time you have and what you want them to walk away with — we'll shape the programme around it.</p>
     </div>
-    <div class="foot-bottom">
-      <span>© <span id="year">2026</span> Creative Camel Studio. All rights reserved.</span>
-      <span>Made with ♥ in Bengaluru</span>
+    <a class="btn btn-light" href="mailto:info@creativecamel.in">Start a conversation →</a>
+  </div>
+
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/img/logo-camel-heart-light.png" alt="Creative Camel Studio">
+      <div class="tagline">Designing with a heart</div>
+      <p>A design thinking practice for campuses and companies, run out of Bengaluru.</p>
     </div>
+
+    <div class="foot-col">
+      <h4>Programmes</h4>
+      <a href="index.html#programmes">Corporate Trainings</a>
+      <a href="index.html#programmes">Institutional Workshops</a>
+      <a href="index.html#programmes">Aspiring Individuals</a>
+      <a href="index.html#colleges">What a session looks like</a>
+    </div>
+
+    <div class="foot-col">
+      <h4>Studio</h4>
+      <a href="index.html#projects">Selected work</a>
+      <a href="fittrack.html">FitTrack</a>
+      <a href="practworks.html">PractWorks</a>
+      <a href="https://ambit.edu.in/#/">AMBIT</a>
+    </div>
+
+    <div class="foot-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:info@creativecamel.in">info@creativecamel.in</a>
+      <span class="li">Bengaluru, Karnataka</span>
+      <span class="li">Mon–Fri, 10am–6pm IST</span>
+      <a href="index.html#about">About Vijay</a>
+    </div>
+  </div>
+
+  <div class="foot-bottom">
+    <span>&copy; <span id="yr">2026</span> Creative Camel Studio. All rights reserved.</span>
+    <span>Made with <span class="heart">&hearts;</span> in Bengaluru</span>
   </div>
 </footer>
 
-<script src="assets/script.js?v=6"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (/[?&]still=1/.test(location.search)) reduce = true;
+
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  // Scroll reveal — same one-shot behaviour and 70ms stagger as the home page.
+  var rv = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    rv.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    rv.forEach(function(el){
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function(c){
+        return c.classList && c.classList.contains('rv');
+      });
+      el.style.transitionDelay = (Math.min(sibs.indexOf(el), 5) * 0.07) + 's';
+    });
+    var rio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(el){ rio.observe(el); });
+  }
+
+  // Pointer-origin wipe on the filled buttons — same as the home page.
+  var setOrigin = function(el, e){
+    var r = el.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    el.style.setProperty('--wipe-x', x+'px');
+    el.style.setProperty('--wipe-y', y+'px');
+    var far = Math.max(Math.hypot(x,y), Math.hypot(r.width-x,y),
+                       Math.hypot(x,r.height-y), Math.hypot(r.width-x,r.height-y));
+    el.style.setProperty('--wipe-d', Math.ceil(far*2)+'px');
+  };
+  document.querySelectorAll('.btn').forEach(function(el){
+    el.addEventListener('pointerenter', function(e){ setOrigin(el,e); });
+    el.addEventListener('pointerleave', function(e){ setOrigin(el,e); });
+  });
+
+  // Cursor companion — the camel trails the pointer, exactly as on the home page.
+  (function(){
+    if (reduce || !window.matchMedia ||
+        !window.matchMedia('(hover:hover) and (pointer:fine)').matches ||
+        !window.matchMedia('(min-width:901px)').matches) return;
+
+    var cam = document.createElement('div');
+    cam.className = 'cur-camel away';
+    cam.setAttribute('aria-hidden', 'true');
+    var camImg = document.createElement('img');
+    camImg.src = 'assets/img/logo-camel-face.png';
+    camImg.alt = '';
+    cam.appendChild(camImg);
+    document.body.appendChild(cam);
+
+    // off the pointer's bottom-right: the 10px gap plus half the 28px mark,
+    // offset from the centre so it stays put when it blooms over a link
+    var OFF = 24;
+    var mx = 0, my = 0, camX = 0, camY = 0, shown = false, running = false;
+
+    function tick(){
+      camX += (mx - camX) * 0.16;
+      camY += (my - camY) * 0.16;
+      cam.style.transform = 'translate(' + (camX + OFF) + 'px,' + (camY + OFF) + 'px) ' +
+                            'translate(-50%,-50%)';
+      requestAnimationFrame(tick);
+    }
+
+    document.addEventListener('mousemove', function(e){
+      mx = e.clientX; my = e.clientY;
+      if (shown) return;
+      if (!running) { camX = mx; camY = my; running = true; requestAnimationFrame(tick); }
+      cam.classList.remove('away');
+      shown = true;
+    }, {passive:true});
+
+    document.addEventListener('mouseleave', function(){
+      cam.classList.add('away'); shown = false;
+    });
+
+    var clickable = 'a, button, input, textarea, select, [role="button"]';
+    document.addEventListener('mouseover', function(e){
+      if (e.target.closest && e.target.closest(clickable)) cam.classList.add('on-link');
+    });
+    document.addEventListener('mouseout', function(e){
+      if (e.target.closest && e.target.closest(clickable)) cam.classList.remove('on-link');
+    });
+  })();
+})();
+</script>
 </body>
 </html>

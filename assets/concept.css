@@ -1,0 +1,612 @@
+/* Creative Camel — the 2026 site. Shared by index.html and contact.html,
+   so the nav, the hero card and the footer stay identical between them. */
+:root{
+  --cream:#FFF6E6; --yellow-500:#F7B733; --yellow-600:#F0A415;
+  --yellow-100:#FDECC3; --yellow-50:#FFF3D6;
+  --ink:#241C10; --ink-soft:#3A2D1B; --grey:#6B6455; --grey-light:#A79C89;
+  --white:#FFFFFF; --heart-red:#FF3B30; --violet:#4A2673; --hl-red:#9A1B11;
+  --line:rgba(36,28,16,.10); --line-2:rgba(36,28,16,.16);
+  --shadow-sm:0 2px 10px rgba(36,28,16,.06);
+  --shadow-md:0 16px 40px -12px rgba(36,28,16,.16);
+  --shadow-lg:0 30px 70px -20px rgba(36,28,16,.24);
+  --font:"Plus Jakarta Sans",system-ui,sans-serif;
+  /* existing house tokens — extended, not forked */
+  --ease-spring:cubic-bezier(.32,.72,0,1);
+  --ease-tap:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font);
+  -webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+a{text-decoration:none;color:inherit}
+
+/* ══ concept banner ══ */
+.note{background:var(--ink);color:#EDE4D2;font-size:13px;padding:11px 22px;text-align:center}
+.note b{color:#fff}
+
+/* ══ ENTRANCE CHOREOGRAPHY ══ */
+@keyframes riseIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes markIn{from{opacity:0;transform:scale(.965) translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes bloom{from{transform:translate(0,0) scale(1)}to{transform:translate(-70px,46px) scale(1.12)}}
+.r{animation:riseIn .62s var(--ease-spring) both}
+.d1{animation-delay:.07s}.d2{animation-delay:.14s}.d3{animation-delay:.21s}
+.d4{animation-delay:.28s}.d5{animation-delay:.35s}.d6{animation-delay:.42s}
+.d7{animation-delay:.49s}.d8{animation-delay:.56s}
+
+/* ══ HERO — large ══ */
+.hero{padding:0}
+.hero-card{
+  position:relative;overflow:hidden;border-radius:40px;margin:18px;
+  background:linear-gradient(135deg,var(--yellow-500),var(--yellow-600));
+  min-height:52vh;display:flex;flex-direction:column;padding:20px 44px 34px;
+}
+/* content sits in a constrained column inside the card — same as the live site,
+   so nothing runs to the card edge on a wide screen */
+.hwrap{max-width:1200px;margin:0 auto;padding:0 40px;width:100%;
+  flex:1;display:flex;flex-direction:column}
+.hero-card::after{ /* soft light bloom, purely decorative */
+  content:"";position:absolute;width:760px;height:760px;right:-200px;top:-280px;
+  background:radial-gradient(circle,rgba(255,255,255,.34),transparent 62%);
+  pointer-events:none;animation:fadeIn 1.4s var(--ease-spring) both,bloom 19s ease-in-out infinite alternate
+}
+nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600;
+  position:relative;z-index:3;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px;margin-right:auto}
+.brand img{width:30px;height:30px;object-fit:contain}
+nav a.lnk{opacity:.75;transition:opacity .22s var(--ease-spring)}
+nav a.lnk.on{opacity:1;border-bottom:2px solid var(--ink);padding-bottom:3px}
+@media(hover:hover) and (pointer:fine){nav a.lnk:hover{opacity:1}}
+
+.hero-body{flex:1;display:grid;grid-template-columns:1.06fr .94fr;gap:26px;
+  align-items:center;position:relative;z-index:2}
+.kicker{font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(36,28,16,.6);margin-bottom:11px}
+h1{font-size:clamp(27px,3.75vw,50px);line-height:1.06;letter-spacing:-.03em;
+  font-weight:800;margin:0 0 17px;max-width:none;
+  /* letterpress on the warm ground — stops the ink reading as flat vinyl */
+  text-shadow:0 1px 0 rgba(255,255,255,.34)}
+h1 .ln{display:block}
+h1 .ln:first-child{padding-bottom:.17em}
+
+/* the two words the whole practice is named for: different voice, different colour */
+.hl{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:600;
+  font-optical-sizing:auto;font-variation-settings:"SOFT" 40,"WONK" 1;
+  font-size:1.08em;letter-spacing:-.015em;color:var(--white);
+  display:inline-block;line-height:1;position:relative;white-space:nowrap;padding-right:.05em;
+  /* white on gold inverts the letterpress: a dark tight seat, a dark wide lift */
+  text-shadow:0 1px 0 rgba(36,28,16,.13),0 12px 30px rgba(36,28,16,.26)}
+.hl .ul{position:absolute;left:0;right:auto;bottom:-.3em;width:100%;height:.16em;overflow:visible}
+.hl .ul path{fill:none;stroke:rgba(255,255,255,.95);stroke-width:3.2;stroke-linecap:round;
+  vector-effect:non-scaling-stroke;stroke-dasharray:330;stroke-dashoffset:330;
+  animation:drawUl 1.05s var(--ease-spring) .78s forwards}
+@keyframes drawUl{to{stroke-dashoffset:0}}
+.sub{font-size:clamp(14.5px,1.2vw,16.5px);color:var(--ink-soft);max-width:50ch;margin:0 0 21px}
+.cta{display:flex;gap:13px;flex-wrap:wrap}
+
+/* buttons — reuse shipped wipe behaviour */
+.btn{border-radius:999px;font-size:14.5px;font-weight:600;padding:14px 28px;
+  display:inline-block;position:relative;overflow:hidden;isolation:isolate;cursor:pointer;
+  transition:transform .3s var(--ease-spring),box-shadow .3s var(--ease-spring),color .35s var(--ease-spring)}
+.btn::before{content:"";position:absolute;z-index:-1;
+  left:var(--wipe-x,50%);top:var(--wipe-y,50%);
+  width:var(--wipe-d,520px);height:var(--wipe-d,520px);
+  margin:calc(var(--wipe-d,520px) / -2) 0 0 calc(var(--wipe-d,520px) / -2);
+  border-radius:50%;transform:scale(0);transition:transform .5s var(--ease-spring)}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:var(--shadow-md)}
+.btn-dark::before{background:var(--white)}
+.btn-light{background:#fff;color:var(--ink);box-shadow:var(--shadow-md)}
+.btn-light::before{background:var(--ink)}
+@media(hover:hover) and (pointer:fine){
+  .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .btn:hover::before{transform:scale(1)}
+  .btn-dark:hover{color:var(--ink)} .btn-light:hover{color:#fff}
+}
+.btn:active{transform:translateY(-2px) scale(.96);transition:transform .1s var(--ease-tap)}
+
+/* the mark — real logo artwork, enlarged */
+/* three layers: entrance (wrap) · pointer parallax (par) · breathing (inner).
+   Kept separate so no two animations ever write the same transform. */
+.mark-wrap{position:relative;justify-self:center;width:100%;max-width:430px;
+  animation:markIn .92s var(--ease-spring) both;animation-delay:.1s}
+.mark-par{will-change:transform}
+.mark-inner{position:relative;animation:breathe 6.5s ease-in-out infinite alternate}
+.mark-wrap img{width:100%;display:block;filter:drop-shadow(0 34px 54px rgba(36,28,16,.2));
+  transition:filter .4s var(--ease-spring)}
+@keyframes breathe{from{transform:translateY(0) scale(1)}to{transform:translateY(-7px) scale(1.009)}}
+
+.mark-heart{position:absolute;left:23.56%;top:62.92%;width:15.16%;height:22.90%;
+  transform-origin:50% 50%;pointer-events:none;
+  animation:idleBeat 7s var(--ease-spring) infinite}
+.mark-heart path{fill:var(--heart-red)}
+/* resting pulse — one beat roughly every 7s, so the mark reads as alive */
+@keyframes idleBeat{
+  0%,84%,100%{transform:scale(1)}
+  88%{transform:scale(1.17)}
+  91%{transform:scale(1)}
+  94.5%{transform:scale(1.10)}
+}
+@keyframes heartbeat{0%,100%{transform:scale(1)}22%{transform:scale(1.22)}38%{transform:scale(1)}60%{transform:scale(1.14)}}
+.mark-wrap.beat .mark-heart{animation:heartbeat 1s var(--ease-spring) 1}
+@media(hover:hover) and (pointer:fine){
+  .mark-wrap:hover .mark-heart{animation:heartbeat 1s var(--ease-spring) infinite}
+  .mark-wrap:hover img{filter:drop-shadow(0 40px 60px rgba(36,28,16,.28))}
+}
+
+/* ── ambient orbs — decorative only, never behind text ── */
+.orb{position:absolute;border-radius:50%;pointer-events:none;z-index:1;
+  background:rgba(255,255,255,.34)}
+.o1{width:15px;height:15px;left:6%;bottom:30%;animation:drift1 12s ease-in-out infinite alternate}
+.o2{width:9px;height:9px;left:46%;top:16%;animation:drift2 9.5s ease-in-out infinite alternate}
+.o3{width:22px;height:22px;right:7%;bottom:22%;background:rgba(255,255,255,.22);
+  animation:drift3 15s ease-in-out infinite alternate}
+.o4{width:7px;height:7px;right:33%;top:11%;animation:drift2 11s ease-in-out infinite alternate-reverse}
+.o5{width:12px;height:12px;left:27%;bottom:13%;background:rgba(255,255,255,.26);
+  animation:drift1 13.5s ease-in-out infinite alternate-reverse}
+@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(16px,-26px)}}
+@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-20px,18px)}}
+@keyframes drift3{from{transform:translate(0,0) scale(1)}to{transform:translate(-14px,-20px) scale(1.14)}}
+
+/* stats inside hero */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;position:relative;z-index:2;margin-top:14px}
+.stat{background:rgba(255,255,255,.93);border-radius:16px;padding:18px 14px;text-align:center;
+  box-shadow:var(--shadow-sm);position:relative;z-index:2;
+  transition:transform .26s var(--ease-spring),box-shadow .26s var(--ease-spring),background-color .26s var(--ease-spring)}
+.stat .n{display:inline-block;transition:transform .26s var(--ease-spring)}
+@media(hover:hover) and (pointer:fine){
+  .stat:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);background:#fff}
+  .stat:hover .n{transform:scale(1.08)}
+}
+.stat .n{font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-.035em;line-height:1}
+.stat .n em{font-style:normal;color:var(--yellow-600)}
+/* same uppercase-tracked treatment as the section eyebrows */
+.stat .l{font-size:11px;font-weight:700;color:var(--grey-light);margin-top:9px;
+  letter-spacing:.14em;text-transform:uppercase}
+
+/* ══ sections ══ */
+section{padding:146px 0 0}
+/* sections also carry .wrap, whose `padding:0 22px` out-specifies the element
+   selector above and zeroes this out — so set it at class+element specificity. */
+section.wrap{padding-top:146px}
+.sk{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--grey-light);margin-bottom:11px}
+h2{font-size:clamp(28px,3.9vw,46px);letter-spacing:-.028em;font-weight:800;margin:0 0 12px;line-height:1.06}
+.intro{font-size:17px;color:var(--grey);max-width:60ch;margin:0 0 46px}
+
+/* programme rows — the spine */
+.prog{display:grid;grid-template-columns:52px 1fr auto;gap:22px;align-items:start;
+  background:var(--white);border:1px solid var(--line);border-radius:20px;
+  padding:26px 30px;margin-bottom:14px;box-shadow:var(--shadow-sm);
+  transition:transform .22s var(--ease-spring),box-shadow .22s var(--ease-spring),border-color .22s var(--ease-spring)}
+.prog .no{font-size:14px;font-weight:800;color:var(--yellow-600);letter-spacing:.04em;padding-top:5px}
+.prog h3{margin:0 0 5px;font-size:21px;font-weight:700;letter-spacing:-.015em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.prog p{margin:0;font-size:15px;color:var(--grey);max-width:62ch}
+.prog .mt{text-align:right;font-size:12.5px;color:var(--grey-light);line-height:1.65;white-space:nowrap;padding-top:3px}
+.prog .arw{display:inline-block;transition:transform .22s var(--ease-spring)}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--yellow-50);color:#8A5B07;padding:4px 11px;border-radius:999px}
+@media(hover:hover) and (pointer:fine){
+  .prog:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--line-2)}
+  .prog:hover .arw{transform:translateX(5px)}
+}
+
+/* session — a four-step journey with the teaching camel presenting it */
+.journey{position:relative;background:var(--white);border:1px solid var(--line);
+  border-radius:28px;padding:34px 34px 38px;box-shadow:var(--shadow-sm);overflow:hidden}
+/* classroom scene: participants at the left, camel teaching from the right corner */
+/* both sit in the card's bottom corners; the front row of heads laps over the
+   dashed track so the class reads as seated just in front of it */
+/* inset to match the dotted track below, so both illustrations rest on it */
+.scene{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  margin:-4px 44px -2px;position:relative;z-index:2}
+.scene .students{width:min(52%,448px);height:auto;display:block;align-self:flex-end}
+.journey .teach{width:200px;height:auto;display:block;flex:none;align-self:flex-end;
+  margin-bottom:2px;animation:teachBob 5.5s ease-in-out infinite alternate}
+@keyframes teachBob{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-9px) rotate(1deg)}}
+.scene .students{animation:classSway 7s ease-in-out infinite alternate}
+@keyframes classSway{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+
+/* dashed track the cards hang from — drawn left to right on reveal */
+.track{position:relative;height:2px;margin:0 44px 24px;z-index:1}
+.track .line{position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,var(--yellow-600) 0 9px,transparent 9px 18px);
+  clip-path:inset(0 100% 0 0);
+  transition:clip-path 1.5s var(--ease-spring) .25s}
+.journey.in .track .line{clip-path:inset(0 0 0 0)}
+
+.jgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.jstep{position:relative;background:var(--cream);border:1px solid var(--line);
+  border-radius:20px;padding:22px 20px 20px;
+  opacity:0;transform:translateY(22px);
+  transition:opacity .6s var(--ease-spring),transform .6s var(--ease-spring),
+             box-shadow .25s var(--ease-spring),border-color .25s var(--ease-spring);
+  transition-delay:calc(var(--i) * 110ms + 350ms)}
+.journey.in .jstep{opacity:1;transform:none}
+.jtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+.jicon{display:inline-block;line-height:0;
+  animation:iconFloat 4.5s ease-in-out infinite alternate;
+  animation-delay:calc(var(--i) * 420ms)}
+.jicon svg{width:38px;height:38px;display:block}
+@keyframes iconFloat{from{transform:translateY(0) rotate(-3deg)}to{transform:translateY(-6px) rotate(3deg)}}
+.jnum{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--yellow-600);
+  background:var(--yellow-50);border:1px solid rgba(240,164,21,.4);
+  padding:4px 9px;border-radius:999px;
+  transition:background-color .25s var(--ease-spring),color .25s var(--ease-spring)}
+.jstep h4{margin:0 0 6px;font-size:16.5px;font-weight:800;letter-spacing:-.014em;line-height:1.25}
+.jstep p{margin:0 0 14px;font-size:13.5px;color:var(--grey);line-height:1.55}
+.jday{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--grey-light)}
+@media(hover:hover) and (pointer:fine){
+  .jstep:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--line-2)}
+  .jstep:hover .jicon{animation:iconPop .5s var(--ease-spring)}
+  .jstep:hover .jnum{background:var(--ink);color:#fff;border-color:var(--ink)}
+}
+@keyframes iconPop{0%{transform:scale(1) rotate(0)}40%{transform:scale(1.28) rotate(-10deg)}100%{transform:scale(1) rotate(0)}}
+.jstep:active{transform:translateY(-6px) scale(.975);transition-duration:.1s}
+@media(max-width:940px){
+  .scene{gap:12px;margin-left:12px;margin-right:12px}
+  .scene .students{width:62%}
+  .journey .teach{width:140px}
+  .jgrid{grid-template-columns:repeat(2,1fr)}
+  .track{display:none}
+}
+@media(max-width:560px){.jgrid{grid-template-columns:1fr}}
+
+/* facilitator */
+.fac{background:var(--white);border:1px solid var(--line);border-radius:26px;
+  padding:38px 40px;box-shadow:var(--shadow-sm)}
+.fac-head{display:flex;align-items:center;gap:24px;margin-bottom:26px}
+.fac-head img{width:104px;height:104px;border-radius:50%;object-fit:cover;flex:none;
+  background:#fff;border:1px solid var(--line)}
+.fac h3{margin:0 0 6px;font-size:27px;font-weight:800;letter-spacing:-.022em;line-height:1.1}
+.fac-role{font-size:15px;font-weight:700;color:var(--yellow-600)}
+.fac-role2{font-size:13.5px;color:var(--grey);margin-top:3px}
+.fac-body p{margin:0 0 14px;font-size:15.5px;color:var(--grey);line-height:1.68;max-width:84ch}
+.fac-body p:last-child{margin-bottom:0}
+.fac-body b{color:var(--ink);font-weight:700}
+.fac-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0 26px;
+  padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fac-stats div{text-align:center}
+.fac-stats b{display:block;font-size:30px;font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--ink)}
+.fac-stats span{display:block;font-size:11.5px;color:var(--grey);margin-top:6px;letter-spacing:.03em}
+.worked{margin:26px 0 24px;padding-top:24px;border-top:1px solid var(--line)}
+.worked h5{margin:0 0 16px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grey-light);font-weight:700}
+/* minmax(0,1fr), not 1fr: a grid track's automatic minimum is its content, so
+   the logo tiles refuse to shrink below their image width and push the page
+   2px wider than the viewport on a phone */
+.logo-wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.logo-tile{border:1px solid var(--line);border-radius:14px;background:#FFFDF8;
+  height:74px;display:grid;place-items:center;padding:0 16px;
+  transition:border-color .22s var(--ease-spring),transform .22s var(--ease-spring),box-shadow .22s var(--ease-spring)}
+/* brightness(0) flattens every mark to ink regardless of its own colours,
+   so eight very different brands read as one quiet row */
+.logo-tile img{display:block;object-fit:contain;filter:brightness(0);opacity:.55;
+  transition:opacity .22s var(--ease-spring)}
+.logo-tile.wide img{max-width:126px;max-height:17px}
+.logo-tile.mid  img{max-width:112px;max-height:26px}
+.logo-tile.tall img{max-width:76px;max-height:40px}
+.logo-tile.square img{max-width:40px;max-height:40px}
+@media(hover:hover) and (pointer:fine){
+  .logo-tile:hover{border-color:var(--line-2);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+  .logo-tile:hover img{opacity:.95}
+}
+@media(max-width:860px){.logo-wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.fac-meta{display:grid;grid-template-columns:1fr;gap:22px}
+.fm h5{margin:0 0 6px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grey-light);font-weight:700}
+.fm p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+.stack{list-style:none;margin:0;padding:0}
+.stack li{font-size:13.5px;color:var(--ink-soft);line-height:1.75;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+@media(max-width:620px){.stack li{white-space:normal}}
+@media(max-width:860px){
+  .fac{padding:26px 22px}
+  .fac-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .fac-stats{grid-template-columns:repeat(2,1fr);gap:20px}
+  .fac-meta{grid-template-columns:1fr}
+}
+
+/* proof grid */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:24px;
+  box-shadow:var(--shadow-sm);transition:transform .22s var(--ease-spring),box-shadow .22s var(--ease-spring)}
+@media(hover:hover) and (pointer:fine){.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}}
+.card h4{margin:11px 0 7px;font-size:17.5px;font-weight:700;letter-spacing:-.012em}
+.card p{margin:0;font-size:14.5px;color:var(--grey)}
+.card img.shot{width:100%;border-radius:13px;margin-bottom:4px;display:block;aspect-ratio:4/3;object-fit:cover}
+
+/* studio footnote */
+.foot-note{margin-top:34px;background:var(--yellow-50);border:1px solid var(--yellow-100);
+  border-radius:20px;padding:26px 30px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.foot-note p{margin:0;flex:1;font-size:15.5px;color:var(--ink-soft);min-width:280px}
+.foot-note b{font-weight:700}
+.mini{display:flex;gap:9px}
+.mini img{width:62px;height:48px;border-radius:9px;object-fit:cover;border:1px solid var(--line)}
+
+/* ── footer ── */
+footer{background:var(--ink);color:#E7DFCB;border-radius:32px;margin:146px 18px 18px;padding:54px 54px 32px}
+.foot-cta{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+  padding-bottom:40px;margin-bottom:42px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-cta h3{margin:0 0 7px;font-size:clamp(23px,2.5vw,31px);font-weight:800;letter-spacing:-.024em;color:#fff;line-height:1.14}
+.foot-cta p{margin:0;font-size:15px;color:#B8AE99;max-width:46ch}
+.foot-cta .btn{flex:none}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.15fr;gap:44px;margin-bottom:44px}
+.foot-brand img{width:104px;display:block;margin-bottom:15px}
+.foot-brand .tagline{font-weight:700;font-size:17px;color:var(--yellow-500);margin-bottom:12px}
+.foot-brand p{margin:0;font-size:14px;color:#938971;line-height:1.65;max-width:34ch}
+.foot-col h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#B8AE99;margin:0 0 17px;font-weight:700}
+.foot-col a,.foot-col span.li{display:block;color:#E7DFCB;font-size:14.5px;padding:5px 0;
+  transition:color .22s var(--ease-spring),transform .22s var(--ease-spring)}
+.foot-col span.li{color:#938971}
+@media(hover:hover) and (pointer:fine){
+  .foot-col a:hover{color:var(--yellow-500);transform:translateX(3px)}
+}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
+  display:grid;place-items:center;padding:0;
+  transition:border-color .22s var(--ease-spring),background-color .22s var(--ease-spring),transform .22s var(--ease-spring)}
+.socials svg{width:17px;height:17px;display:block}
+@media(hover:hover) and (pointer:fine){
+  .socials a:hover{border-color:var(--yellow-500);background:rgba(247,183,51,.12);transform:translateY(-2px)}
+}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;
+  justify-content:space-between;color:#938971;font-size:13.5px;flex-wrap:wrap;gap:10px}
+.foot-bottom .heart{color:var(--heart-red)}
+@media(max-width:940px){
+  footer{padding:36px 26px 26px;margin:100px 10px 10px;border-radius:26px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .foot-cta{flex-direction:column;align-items:flex-start;gap:18px}
+}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* ── feedback: the cards they fill in before they leave ── */
+/* the table: five real cards, draggable, hover one to bring it up and read it */
+.fb-table-wrap{margin:0 0 20px;border-radius:26px;overflow:hidden;
+  border:1px solid var(--line);background:var(--white);box-shadow:var(--shadow-sm)}
+.fb-table{position:relative;height:440px;overflow:hidden;touch-action:pan-y;
+  background:radial-gradient(120% 95% at 50% -10%,rgba(255,255,255,.62),transparent 62%),
+             linear-gradient(168deg,#EFE7D6,#E3D8C6)}
+.fb-table::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;
+  background:rgba(36,28,16,.38);opacity:0;transition:opacity .3s var(--ease-tap)}
+.fb-table.has-up::after{opacity:1}
+.fb-card{position:absolute;top:0;left:0;width:215px;padding:7px 7px 9px;
+  background:#fff;border:1px solid rgba(36,28,16,.14);border-radius:6px;
+  box-shadow:0 10px 24px -8px rgba(36,28,16,.34),0 2px 6px rgba(36,28,16,.14);
+  cursor:grab;transform-origin:50% 50%;will-change:transform;
+  transition:box-shadow .22s var(--ease-tap),transform .4s var(--ease-spring)}
+.fb-card img{display:block;width:100%;height:auto;border-radius:2px}
+.fb-card.grab{cursor:grabbing;transition:box-shadow .22s var(--ease-tap)}
+/* the card grows where it lies rather than flying to the middle, so the pointer
+   stays inside it and there is nothing to chase */
+.fb-card.up{box-shadow:0 44px 90px -22px rgba(36,28,16,.52)}
+.fb-card:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.fb-table-wrap figcaption{font-size:13px;color:var(--grey);padding:13px 20px;
+  border-top:1px solid var(--line);background:var(--white)}
+.fb-table-wrap figcaption .hint{color:var(--grey-light)}
+
+.fb-summary{margin-bottom:44px}
+.fb-scale{background:var(--white);border:1px solid var(--line);border-radius:22px;
+  padding:30px 34px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.fb-row .q{font-size:14.5px;font-weight:700;letter-spacing:-.01em;margin-bottom:12px}
+.fb-dots{display:flex;align-items:center;gap:26px}
+.fb-dot{width:15px;height:15px;border-radius:50%;border:1.5px solid var(--line-2);flex:0 0 auto}
+.fb-dot.hit{background:var(--yellow-500);border-color:var(--yellow-600);
+  box-shadow:0 0 0 4px rgba(247,183,51,.26)}
+.fb-ends{display:flex;justify-content:space-between;width:179px;margin-top:9px;
+  font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--grey-light);white-space:nowrap}
+.fb-tally{display:block;font-size:13.5px;color:var(--grey);margin-top:15px;
+  padding-top:13px;border-top:1px solid var(--line)}
+.fb-tally b{color:var(--ink);font-weight:700}
+
+.fb-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.fb-q{grid-column:span 2;background:var(--white);border:1px solid var(--line);border-radius:20px;
+  padding:26px 26px 22px;box-shadow:var(--shadow-sm);position:relative;
+  transition:transform .22s var(--ease-spring),box-shadow .22s var(--ease-spring)}
+.fb-q:nth-child(4),.fb-q:nth-child(5){grid-column:span 3}
+@media(hover:hover) and (pointer:fine){.fb-q:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}}
+.fb-q::before{content:"\201C";position:absolute;top:6px;left:20px;font-size:56px;line-height:1;
+  color:var(--yellow-100);font-family:Georgia,serif}
+.fb-q p{margin:0;font-size:15px;line-height:1.62;color:var(--ink-soft);position:relative}
+.fb-q .meta{display:flex;align-items:center;gap:9px;margin-top:17px;padding-top:14px;
+  border-top:1px solid var(--line);font-size:11.5px;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--grey-light)}
+.fb-q .mini{display:flex;gap:4px;margin-left:auto}
+.fb-q .mini i{width:7px;height:7px;border-radius:50%;background:var(--line-2)}
+.fb-q .mini i.hit{background:var(--yellow-500)}
+
+@media(max-width:900px){
+  /* no room to scatter on a phone: stack them, already readable at column width */
+  .fb-table{height:auto;display:grid;gap:14px;padding:16px;overflow:visible}
+  .fb-card{position:static;width:100%;transform:none!important;cursor:default}
+  .fb-table::after{display:none}
+  .fb-table-wrap figcaption .hint{display:none}
+  .fb-scale{grid-template-columns:1fr;gap:24px}
+  .fb-grid{grid-template-columns:1fr}
+  .fb-q,.fb-q:nth-child(4),.fb-q:nth-child(5){grid-column:span 1}
+}
+
+/* ── programme topics, revealed on hover ──
+   Same pattern as the live workshops page: tucked away on pointer devices, always
+   visible on touch (which can't hover). max-height is the accordion exception —
+   there's no transform equivalent for "grow to fit content". */
+/* ── programme topic table, revealed on hover ──
+   Same reveal pattern as the live workshops page: tucked away on pointer devices,
+   always open on touch (which can't hover). The table is a descendant of .prog, so
+   moving the pointer down into it keeps the row hovered and the table open. */
+.ttwrap{margin-top:0}
+.ttable{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+.ttable th{text-align:left;font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--grey-light);font-weight:700;padding:0 10px 9px;border-bottom:1px solid var(--line)}
+.ttable td{padding:9px 10px;border-bottom:1px solid rgba(36,28,16,.06);vertical-align:top}
+.ttable tr:last-child td{border-bottom:none}
+.ttable .n{width:34px;color:var(--yellow-600);font-weight:800;font-size:11px;padding-top:11px}
+.ttable .t{width:28%;font-weight:700;color:var(--ink);letter-spacing:-.008em}
+.ttable .d{color:var(--grey);line-height:1.5}
+.ttable .w{width:72px;text-align:right;color:var(--grey-light);font-size:11.5px;
+  white-space:nowrap;padding-top:11px}
+.ttable tbody tr.ai{background:var(--yellow-50)}
+.ttable tbody tr.ai .t{color:var(--ink)}
+.aitag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.08em;
+  background:var(--yellow-100);border:1px solid rgba(240,164,21,.6);color:#8A5B07;
+  padding:2px 6px;border-radius:999px;margin-right:6px;vertical-align:1px}
+@media(hover:hover) and (pointer:fine){
+  .ttable tbody tr{transition:background-color .18s var(--ease-spring)}
+  .ttable tbody tr:hover{background:var(--yellow-50)}
+  .ttable tbody tr.ai:hover{background:var(--yellow-100)}
+}
+@media (hover:hover){
+  .prog .ttwrap{
+    max-height:0;opacity:0;overflow:hidden;margin-top:0;
+    transition:max-height .6s var(--ease-spring),opacity .35s var(--ease-tap),margin-top .6s var(--ease-spring);
+  }
+  .prog:hover .ttwrap,.prog:focus-within .ttwrap{max-height:760px;opacity:1;margin-top:18px}
+}
+@media(max-width:860px){
+  .ttable{font-size:12px}
+  .ttable .d,.ttable th:nth-child(3){display:none}
+  .ttable .t{width:auto}
+}
+
+/* ── certificate spotlight ── */
+.spot{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center;
+  background:var(--white);border:1px solid var(--line);border-radius:28px;
+  padding:40px;box-shadow:var(--shadow-sm)}
+.spot-media img{width:100%;display:block;border-radius:16px;border:1px solid var(--line);
+  box-shadow:var(--shadow-md);transition:transform .45s var(--ease-spring)}
+@media(hover:hover) and (pointer:fine){.spot-media img:hover{transform:scale(1.02)}}
+.spot-body h3{margin:12px 0 12px;font-size:28px;font-weight:800;letter-spacing:-.022em;line-height:1.14}
+.spot-body p{margin:0;font-size:15.5px;color:var(--grey);line-height:1.65}
+.ticks{list-style:none;margin:22px 0 0;padding:0}
+.ticks li{position:relative;padding-left:30px;margin-bottom:12px;font-size:14.5px;color:var(--ink-soft)}
+.ticks li::before{content:"";position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;
+  background:var(--yellow-50);border:1px solid var(--yellow-100)}
+.ticks li::after{content:"";position:absolute;left:6px;top:8.5px;width:7px;height:4px;
+  border-left:1.8px solid #8A5B07;border-bottom:1.8px solid #8A5B07;transform:rotate(-45deg)}
+@media(max-width:940px){.spot{grid-template-columns:1fr;gap:28px;padding:26px}}
+
+/* ── workshop gallery (from the live workshops page) ── */
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:38px}
+/* five photos: three across, then two wider — no odd empty cell */
+.gallery figure:nth-child(-n+3){grid-column:span 2}
+.gallery figure:nth-child(n+4){grid-column:span 3}
+.gallery figure:nth-child(n+4) img{height:320px}
+.gallery figure{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);background:var(--white);
+  transition:transform .3s var(--ease-spring),box-shadow .3s var(--ease-spring)}
+.gallery img{width:100%;height:260px;object-fit:cover;display:block;
+  transition:transform .5s var(--ease-spring)}
+@media(hover:hover) and (pointer:fine){
+  .gallery figure:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+  .gallery figure:hover img{transform:scale(1.055)}
+}
+@media(max-width:940px){.gallery{grid-template-columns:1fr}
+  .gallery figure{grid-column:span 1!important}
+  .gallery figure img{height:240px!important}}
+
+/* ── cursor companion — the live site trails a red dot behind the pointer; here
+   it is the camel instead, on nothing. The mark carries itself: a light fill for
+   the dark footer, a dark outline for the cream and the gold, and a soft shadow
+   so it floats over whatever it crosses rather than sticking to it. Over anything
+   clickable it blooms into the red ring the live site uses. ── */
+.cur-camel{position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);will-change:transform;
+  transition:width .3s var(--ease-spring),height .3s var(--ease-spring),
+             box-shadow .3s var(--ease-spring),opacity .25s var(--ease-tap)}
+/* with no disc behind it the mark can run bigger, and it needs to: much under
+   this and the sunglasses merge into one dark band and the ears stop reading */
+.cur-camel img{width:28px;height:28px;object-fit:contain;display:block;
+  filter:drop-shadow(0 2px 5px rgba(36,28,16,.38));
+  transition:width .3s var(--ease-spring),height .3s var(--ease-spring)}
+.cur-camel.on-link{width:48px;height:48px;box-shadow:0 0 0 2px var(--heart-red) inset}
+.cur-camel.on-link img{width:30px;height:30px}
+.cur-camel.away{opacity:0}
+/* it is decoration, so it never shows where it cannot behave: no hover, coarse
+   pointer, reduced motion, or a narrow screen */
+@media(max-width:900px){.cur-camel{display:none}}
+
+/* ── selected work — the cards exactly as they stand on the live site ── */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.work{background:var(--white);border:1px solid var(--line);border-radius:24px;
+  overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);
+  transition:transform .4s var(--ease-spring),box-shadow .4s var(--ease-spring)}
+.work:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.work:active{transform:translateY(-2px) scale(.985);transition:transform .12s var(--ease-tap)}
+/* a fixed-height thumb the artwork sits at the bottom of, not a cropped photo */
+.work .media{height:250px;display:flex;align-items:flex-end;justify-content:center;
+  padding-top:26px;position:relative;overflow:hidden}
+/* FitTrack thumb — the app's own blue→magenta gradient, sampled from the screenshot */
+.tint-fittrack{background:linear-gradient(135deg,#09BDFF,#F309E7)}
+.work .media.tint-fittrack img.phone{height:100%;width:auto}
+/* PractWorks thumb — live looping product demo; bg matches the product's sky blue while loading */
+.tint-practwork{background:#57BBF2}
+/* AMBIT thumb — white like the college site's page background while loading. That
+   recording carries the page's own side margins, so the video is zoomed a step
+   further to read edge-to-edge like the PractWorks card. */
+.tint-ambit{background:#FDFCFA}
+.tint-ambit video{transform:scale(1.22)}
+.work:hover .tint-ambit video{transform:scale(1.28)}
+.work .media video{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s var(--ease-spring)}
+.work:hover .media video{transform:scale(1.05)}
+.work .media img.phone{width:150px;border-radius:18px 18px 0 0;
+  box-shadow:0 -14px 34px rgba(36,28,16,.18);transition:transform .5s var(--ease-spring)}
+.work:hover .media img.phone{transform:translateY(-8px)}
+.work .wb{padding:22px 24px 26px}
+.wtag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--yellow-600);font-weight:700}
+.work h3{margin:9px 0 6px;font-size:20px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.work p{margin:0;color:var(--grey);font-size:14.5px}
+@media(max-width:980px){.work-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.work-grid{grid-template-columns:1fr}}
+
+/* ══ SCROLL REVEAL — everything below the hero ══ */
+.rv{opacity:0;transform:translateY(24px);
+  transition:opacity .66s var(--ease-spring),transform .66s var(--ease-spring)}
+.rv.in{opacity:1;transform:none}
+
+/* micro: step dots pop as their row arrives */
+.step .dot{transition:transform .3s var(--ease-spring),background-color .3s var(--ease-spring)}
+.rv.in .step .dot{animation:dotPop .44s var(--ease-spring) both}
+@keyframes dotPop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.step:nth-child(1) .dot{animation-delay:.10s}.step:nth-child(2) .dot{animation-delay:.18s}
+.step:nth-child(3) .dot{animation-delay:.26s}.step:nth-child(4) .dot{animation-delay:.34s}
+
+/* micro: proof images settle from a slight zoom */
+.card img.shot{transition:transform .5s var(--ease-spring)}
+@media(hover:hover) and (pointer:fine){.card:hover img.shot{transform:scale(1.035)}}
+
+/* micro: programme number badge fills on hover */
+.prog .no{transition:color .22s var(--ease-spring),transform .22s var(--ease-spring)}
+@media(hover:hover) and (pointer:fine){.prog:hover .no{transform:translateX(2px);color:var(--ink)}}
+
+/* ══ REDUCED MOTION — gentler, not zero ══ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .r,.mark-wrap,.hero-card::after{animation:fadeIn .25s ease both;animation-delay:0s!important}
+  .rv{opacity:1;transform:none;transition:none}
+  .orb,.mark-inner,.mark-heart,.jicon,.journey .teach,.scene .students{animation:none!important}
+  .jstep{opacity:1;transform:none;transition:none}
+  .track .line{clip-path:inset(0 0 0 0);transition:none}
+  .mark-wrap:hover .mark-heart{animation:none!important}
+  .hero-card::after{animation:fadeIn .25s ease both!important}
+  .orb{opacity:.5}
+  .rv.in .step .dot{animation:none}
+  .mark-wrap.beat .mark-heart,.mark-wrap:hover .mark-heart{animation:none}
+  .btn::before{transition:none}
+  .hl .ul path{animation:none!important;stroke-dashoffset:0}
+  .fb-card{transition:none!important}
+  *{transition-duration:.01ms!important}
+}
+@media(max-width:940px){
+  .hero-body,.session,.fac,.grid3{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .hero-card{min-height:auto;padding:16px 22px 26px;margin:10px;border-radius:28px}
+  .hwrap{padding:0}
+  .mark-wrap{max-width:420px;justify-self:center}
+  .prog{grid-template-columns:38px 1fr;gap:14px}
+  .prog .mt{grid-column:2;text-align:left}
+  nav{flex-wrap:wrap;gap:16px}
+}

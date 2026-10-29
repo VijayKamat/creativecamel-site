@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Creative Camel Studio — Give your idea the boost it deserves</title>
 <meta name="description" content="Creative Camel Studio designs brands, websites and UX for ambitious companies — and runs design thinking workshops for colleges and corporates. Bengaluru, India.">
 <meta property="og:title" content="Creative Camel Studio">
@@ -12,416 +12,717 @@
 <link rel="icon" type="image/png" href="assets/img/logo-camel-face.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=62">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/concept.css?v=1">
 </head>
 <body>
 
-<div class="hero-card">
-  <div class="bubble" style="width:20px;height:20px;top:36px;left:6%;opacity:.5"></div>
-  <div class="bubble" style="width:34px;height:34px;top:120px;left:2%;opacity:.35"></div>
-  <div class="bubble" style="width:16px;height:16px;top:80px;right:34%;opacity:.6"></div>
-  <div class="bubble" style="width:24px;height:24px;bottom:220px;left:44%;opacity:.3"></div>
-  <svg class="paper-plane" viewBox="0 0 100 100" style="top:44px;left:36%;width:64px" aria-hidden="true">
-    <path d="M8 78 L92 8 L52 48 L8 78 Z M52 48 L92 8 L58 72 Z" fill="#ffffff" opacity=".55"/>
-  </svg>
 
-  <div class="wrap">
-    <nav class="nav-inner" aria-label="Main">
-      <a class="brand" href="index.html"><img src="assets/img/logo-camel-face.png" alt="Creative Camel logo">Creative Camel</a>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" class="active">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="workshops.html">Workshops &amp; Mentoring</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-    </nav>
-  </div>
+<!-- ══════ HERO ══════ -->
+<div class="hero">
+  <div class="hero-card">
+    <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+    <span class="orb o4"></span><span class="orb o5"></span>
 
-  <div class="wrap hero">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <h1><span class="light">Give your idea</span><br>the boost it deserves</h1>
-        <p class="hero-sub">Branding, websites and UX for ambitious companies, plus design thinking workshops for teams and campuses.</p>
-        <div class="hero-btns">
-          <a class="btn btn-light" href="workshops.html">Book a workshop</a>
-          <a class="btn btn-primary" href="contact.html">Start a project →</a>
-        </div>
-      </div>
-      <div class="hero-illustration">
-        <div class="mark-wrap" tabindex="0" role="img" aria-label="The Creative Camel mark — hover for a little life">
-          <img src="assets/img/camel-mark-hero.png" alt="">
-          <svg class="mark-heart" viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M50 92 C 18 66, 4 46, 4 27 C 4 9, 19 1, 34 1 C 45 1, 50 10, 50 16 C 50 10, 55 1, 66 1 C 81 1, 96 9, 96 27 C 96 46, 82 66, 50 92 Z"/>
-          </svg>
-        </div>
-      </div>
-    </div>
+    <div class="hwrap">
+      <nav>
+        <a class="brand" href="index.html"><img src="assets/img/logo-camel-face.png" alt="">Creative Camel</a>
+        <a class="lnk on" href="#programmes">Programmes</a>
+        <a class="lnk" href="#projects">Projects</a>
+        <a class="lnk" href="#about">About</a>
+        <a class="lnk" href="contact.html">Contact</a>
+      </nav>
 
-    <div class="stat-cards">
-      <div class="stat-card reveal">
-        <svg class="card-swoosh" viewBox="0 0 320 320" aria-hidden="true">
-          <defs>
-            <linearGradient id="swooshGrad3" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#F7B733"/><stop offset="100%" stop-color="#F0A415"/>
-            </linearGradient>
-            <path id="arcPath3" d="M6 210 A210 210 0 0 0 210 6" fill="none"/>
-          </defs>
-          <path d="M240 6 A234 234 0 0 1 6 240 L6 6 Z" fill="url(#swooshGrad3)"/>
-          <text font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="27" letter-spacing="5" fill="#fff">
-            <textPath href="#arcPath3" startOffset="8">BRANDING</textPath>
-          </text>
-        </svg>
-        <div class="badge">
-          <img src="assets/img/Design.png" alt="">
+      <div class="hero-body">
+        <div>
+          <div class="kicker r">Est. Bengaluru · <span class="cnt" data-to="5000">0</span>+ trained</div>
+          <h1>
+            <span class="ln r d1">A <em class="hl">design thinking<svg class="ul" viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8.4C54 3.1 112 2.4 168 5.6c42 2.4 83 2 129-2.2"/></svg></em></span>
+            <span class="ln r d2">practice for campuses</span>
+            <span class="ln r d3">and companies</span>
+          </h1>
+          <p class="sub r d5">Workshops, mentoring and corporate training — taught by practising designers, assessed properly, certified at the end.</p>
+          <div class="cta r d6">
+            <a class="btn btn-dark" href="#programmes">See the programmes →</a>
+            <a class="btn btn-light" href="#contact">Talk to Vijay</a>
+          </div>
         </div>
-        <div class="stat-text">
-          <div class="value"><span data-count-to="25">0</span>+</div>
-          <div class="desc">Brands Created</div>
-        </div>
-      </div>
-      <div class="stat-card reveal reveal-d1">
-        <svg class="card-swoosh" viewBox="0 0 320 320" aria-hidden="true">
-          <defs>
-            <linearGradient id="swooshGrad2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#F7B733"/><stop offset="100%" stop-color="#F0A415"/>
-            </linearGradient>
-            <path id="arcPath2" d="M6 210 A210 210 0 0 0 210 6" fill="none"/>
-          </defs>
-          <path d="M240 6 A234 234 0 0 1 6 240 L6 6 Z" fill="url(#swooshGrad2)"/>
-          <text font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="27" letter-spacing="5" fill="#fff">
-            <textPath href="#arcPath2" startOffset="8">GROWTH</textPath>
-          </text>
-        </svg>
-        <div class="badge">
-          <img src="assets/img/Growth.png" alt="">
-        </div>
-        <div class="stat-text">
-          <div class="value"><span data-count-to="30">0</span>%</div>
-          <div class="desc">Average, post launch</div>
+
+        <div class="mark-wrap" id="mark">
+          <div class="mark-par" id="markPar">
+            <div class="mark-inner">
+              <img src="assets/img/camel-mark-hero.png" alt="Creative Camel mark">
+              <svg class="mark-heart" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M50 92 C 18 66, 4 46, 4 27 C 4 9, 19 1, 34 1 C 45 1, 50 10, 50 16 C 50 10, 55 1, 66 1 C 81 1, 96 9, 96 27 C 96 46, 82 66, 50 92 Z"/>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="stat-card reveal reveal-d2">
-        <svg class="card-swoosh" viewBox="0 0 320 320" aria-hidden="true">
-          <defs>
-            <linearGradient id="swooshGrad1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#F7B733"/><stop offset="100%" stop-color="#F0A415"/>
-            </linearGradient>
-            <path id="arcPath1" d="M6 210 A210 210 0 0 0 210 6" fill="none"/>
-          </defs>
-          <path d="M240 6 A234 234 0 0 1 6 240 L6 6 Z" fill="url(#swooshGrad1)"/>
-          <text font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="27" letter-spacing="5" fill="#fff">
-            <textPath href="#arcPath1" startOffset="8">WORKSHOPS</textPath>
-          </text>
-        </svg>
-        <div class="badge">
-          <img src="assets/img/Workshop.png" alt="">
-        </div>
-        <div class="stat-text">
-          <div class="value"><span data-count-to="5000">0</span>+</div>
-          <div class="desc">Students and Trainees</div>
-        </div>
+
+      <div class="stats">
+        <div class="stat r d5"><div class="n"><span class="cnt" data-to="5000">0</span><em>+</em></div><div class="l">Students and trainees</div></div>
+        <div class="stat r d6"><div class="n"><span class="cnt" data-to="100">0</span><em>+</em></div><div class="l">Workshops delivered</div></div>
+        <div class="stat r d7"><div class="n"><span class="cnt" data-to="25">0</span><em>+</em></div><div class="l">Brands created</div></div>
+        <div class="stat r d8"><div class="n"><span class="cnt" data-to="18">0</span><em>+</em></div><div class="l">Years of experience</div></div>
       </div>
     </div>
   </div>
 </div>
 
-<section class="section" id="projects">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Selected work</h2>
-    </div>
-    <div class="cards-3">
-      <a class="card reveal" href="fittrack.html">
-        <div class="card-thumb tint-fittrack"><img class="phone" src="assets/img/fittrack-hero.png" alt="FitTrack app onboarding screen"></div>
-        <div class="card-body">
-          <span class="tag">Mobile App · UX</span>
-          <h3>FitTrack</h3>
-          <p>A fitness companion designed to keep people moving every day.</p>
-        </div>
-      </a>
-      <a class="card reveal reveal-d1" href="practworks.html">
-        <div class="card-thumb tint-practwork"><video class="thumb-video" src="assets/video/PractWorks.mp4" autoplay muted loop playsinline aria-label="PractWorks learning platform demo"></video></div>
-        <div class="card-body">
-          <span class="tag">EdTech · Web App</span>
-          <h3>PractWorks</h3>
-          <p>An AI-powered practice platform for students — practice that actually works.</p>
-        </div>
-      </a>
-      <a class="card reveal reveal-d2" href="https://ambit.edu.in/#/" target="_blank" rel="noopener">
-        <div class="card-thumb tint-ambit"><video class="thumb-video" src="assets/video/AMBIT.mp4" autoplay muted loop playsinline aria-label="AMBIT engineering college website demo"></video></div>
-        <div class="card-body">
-          <span class="tag">Education · Website</span>
-          <h3>AMBIT</h3>
-          <p>A global-campus website for an engineering institute in Belagavi.</p>
-        </div>
-      </a>
-    </div>
+<!-- ══════ PROGRAMMES ══════ -->
+<section id="programmes" class="wrap">
+  <div class="sk rv">The catalogue</div>
+  <h2 class="rv">Three programmes</h2>
+  <p class="intro rv">Hover a programme to see what it covers. Every track now includes AI — used as a working tool, and designed for as a material.</p>
+
+  <div class="prog rv">
+    <div class="no">01</div>
+    <div><h3>Corporate Trainings <span class="tag">★ Most booked</span></h3>
+      <p>Design sprints and UX upskilling run against your own product backlog — not a generic case study.</p>
+      <div class="ttwrap"><table class="ttable"><thead><tr><th class="n">#</th><th>Topic</th><th>What we cover</th><th class="w">Session</th></tr></thead><tbody><tr><td class="n">01</td><td class="t">Problem framing &amp; the brief</td><td class="d">Turn a vague ask into a sharp, testable problem statement</td><td class="w">Day 1</td></tr><tr><td class="n">02</td><td class="t">Discovery research sprints</td><td class="d">Plan and run user interviews inside a compressed timeline</td><td class="w">Day 1</td></tr><tr><td class="n">03</td><td class="t">Affinity mapping &amp; synthesis</td><td class="d">Cluster raw notes into patterns the whole team can see</td><td class="w">Day 1</td></tr><tr class="ai"><td class="n">04</td><td class="t"><span class="aitag">✦ AI</span> AI-assisted research synthesis</td><td class="d">Speed up clustering with AI, then check it against the transcripts</td><td class="w">Day 1</td></tr><tr><td class="n">05</td><td class="t">Journey mapping</td><td class="d">Map the current experience and mark exactly where it breaks</td><td class="w">Day 2</td></tr><tr><td class="n">06</td><td class="t">Rapid prototyping</td><td class="d">Paper to clickable in hours, at the fidelity the question needs</td><td class="w">Day 2</td></tr><tr class="ai"><td class="n">07</td><td class="t"><span class="aitag">✦ AI</span> Designing AI features &amp; guardrails</td><td class="d">Probabilistic output, error states, consent and human oversight</td><td class="w">Day 2</td></tr><tr><td class="n">08</td><td class="t">Usability testing</td><td class="d">Script, moderate and record sessions with your actual users</td><td class="w">Day 2</td></tr><tr><td class="n">09</td><td class="t">Design critique</td><td class="d">Run a critique that improves the work instead of defending it</td><td class="w">Day 3</td></tr><tr><td class="n">10</td><td class="t">Stakeholder storytelling</td><td class="d">Present findings so decision-makers actually act on them</td><td class="w">Day 3</td></tr><tr><td class="n">11</td><td class="t">Engineering handoff</td><td class="d">Specs, tokens and the conversations that prevent rework</td><td class="w">Day 3</td></tr><tr><td class="n">12</td><td class="t">Measuring impact</td><td class="d">Pick the metric that proves the design moved something</td><td class="w">Day 3</td></tr></tbody></table></div></div>
+    <div class="mt">1–3 days<br>8–25 people <span class="arw">→</span></div>
+  </div>
+  <div class="prog rv">
+    <div class="no">02</div>
+    <div><h3>Institutional Workshops</h3>
+      <p>Campus intensives and faculty development, with assessment and certificates for every participant.</p>
+      <div class="ttwrap"><table class="ttable"><thead><tr><th class="n">#</th><th>Topic</th><th>What we cover</th><th class="w">Day</th></tr></thead><tbody><tr><td class="n">01</td><td class="t">What is design?</td><td class="d">Beyond aesthetics — design as a way of making decisions</td><td class="w">Day 1</td></tr><tr><td class="n">02</td><td class="t">Why UX matters</td><td class="d">What good and bad experiences actually cost, with real examples</td><td class="w">Day 1</td></tr><tr><td class="n">03</td><td class="t">The design thinking process</td><td class="d">Empathise, define, ideate, prototype, test — run end to end</td><td class="w">Day 1</td></tr><tr><td class="n">04</td><td class="t">User interviews</td><td class="d">Writing the questions, then running your first real interview</td><td class="w">Day 2</td></tr><tr><td class="n">05</td><td class="t">Affinity mapping</td><td class="d">Turning a wall of messy notes into themes you can act on</td><td class="w">Day 2</td></tr><tr><td class="n">06</td><td class="t">Wireframing &amp; UI basics</td><td class="d">Layout, hierarchy, spacing, type and colour</td><td class="w">Day 3</td></tr><tr><td class="n">07</td><td class="t">Figma fundamentals</td><td class="d">Frames, components, auto-layout and sharing work</td><td class="w">Day 3</td></tr><tr><td class="n">08</td><td class="t">Prototyping</td><td class="d">Linking screens into something people can actually try</td><td class="w">Day 4</td></tr><tr class="ai"><td class="n">09</td><td class="t"><span class="aitag">✦ AI</span> Designing with AI tools</td><td class="d">Exploring options faster — and spotting where AI misleads you</td><td class="w">Day 4</td></tr><tr><td class="n">10</td><td class="t">Usability testing</td><td class="d">Watching someone use your work without stepping in to help</td><td class="w">Day 4</td></tr><tr class="ai"><td class="n">11</td><td class="t"><span class="aitag">✦ AI</span> AI ethics &amp; bias</td><td class="d">Where AI gets it wrong, and who it tends to get wrong for</td><td class="w">Day 5</td></tr><tr><td class="n">12</td><td class="t">Portfolio &amp; case study basics</td><td class="d">Writing up what you did so it reads as thinking</td><td class="w">Day 5</td></tr></tbody></table></div></div>
+    <div class="mt">2–5 days<br>40–120 students <span class="arw">→</span></div>
+  </div>
+  <div class="prog rv">
+    <div class="no">03</div>
+    <div><h3>Aspiring Individuals</h3>
+      <p>Portfolio mentoring and career guidance for designers starting out.</p>
+      <div class="ttwrap"><table class="ttable"><thead><tr><th class="n">#</th><th>Topic</th><th>What we cover</th><th class="w">Week</th></tr></thead><tbody><tr><td class="n">01</td><td class="t">Portfolio audit</td><td class="d">An honest read of what's working and what's padding</td><td class="w">Week 1</td></tr><tr><td class="n">02</td><td class="t">Case study narrative</td><td class="d">Problem, decisions, outcome — told as a story, not a list of steps</td><td class="w">Week 2</td></tr><tr><td class="n">03</td><td class="t">Showing impact &amp; metrics</td><td class="d">Making the result legible without inventing numbers</td><td class="w">Week 3</td></tr><tr><td class="n">04</td><td class="t">Visual craft &amp; typography</td><td class="d">The details that separate junior work from mid-level work</td><td class="w">Week 4</td></tr><tr><td class="n">05</td><td class="t">Interaction &amp; motion basics</td><td class="d">Timing, easing, and knowing when not to animate</td><td class="w">Week 5</td></tr><tr><td class="n">06</td><td class="t">Design systems</td><td class="d">Components, tokens, and doing good work inside constraints</td><td class="w">Week 6</td></tr><tr class="ai"><td class="n">07</td><td class="t"><span class="aitag">✦ AI</span> AI in your daily workflow</td><td class="d">Where AI earns its place in your process — and where it doesn't</td><td class="w">Week 7</td></tr><tr class="ai"><td class="n">08</td><td class="t"><span class="aitag">✦ AI</span> Prompting for designers</td><td class="d">Getting usable output instead of generic output</td><td class="w">Week 7</td></tr><tr><td class="n">09</td><td class="t">Portfolio presentation</td><td class="d">Rehearsing the walkthrough until it lands in twenty minutes</td><td class="w">Week 8</td></tr><tr><td class="n">10</td><td class="t">Design interviews</td><td class="d">Whiteboard challenges, take-homes, and the questions behind them</td><td class="w">Week 9</td></tr><tr><td class="n">11</td><td class="t">Personal brand</td><td class="d">A site, a profile and a point of view that reads as yours</td><td class="w">Week 10</td></tr><tr><td class="n">12</td><td class="t">Freelance &amp; rates</td><td class="d">Scoping, pricing, and saying no to the wrong brief</td><td class="w">Week 11</td></tr></tbody></table></div></div>
+    <div class="mt">6–12 weeks<br>1:1 or small group <span class="arw">→</span></div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
+<!-- ══════ FEEDBACK — the cards, as handed in ══════ -->
+<section id="feedback" class="wrap">
+  <div class="sk rv">Feedback</div>
+  <h2 class="rv">Nine of ten marks in the top box</h2>
+  <p class="intro rv">Every participant fills in the same card before they leave the room — two scales, two open questions, handed back on the spot and never chased afterwards. These are the cards from a five-day UI/UX cohort, photographed as they came in.</p>
+
+  <figure class="fb-table-wrap rv">
+    <div class="fb-table" id="fbTable">
+      <div class="fb-card" tabindex="0" role="button" data-x="46" data-y="142" data-r="-9"
+           aria-label="Feedback card 1: “It was a very informative and fun session…” — activate to enlarge">
+        <img src="assets/img/feedback-card-1.jpg" alt="">
+      </div>
+      <div class="fb-card" tabindex="0" role="button" data-x="272" data-y="48" data-r="6"
+           aria-label="Feedback card 2: “Nothing, every session was best and interesting…” — activate to enlarge">
+        <img src="assets/img/feedback-card-2.jpg" alt="">
+      </div>
+      <div class="fb-card" tabindex="0" role="button" data-x="496" data-y="166" data-r="-4"
+           aria-label="Feedback card 3: “Sir, it was a good experience to learn about UI/UX…” — activate to enlarge">
+        <img src="assets/img/feedback-card-3.jpg" alt="">
+      </div>
+      <div class="fb-card" tabindex="0" role="button" data-x="720" data-y="56" data-r="9"
+           aria-label="Feedback card 4: “It was fun and interactive and a very engaging workshop…” — activate to enlarge">
+        <img src="assets/img/feedback-card-4.jpg" alt="">
+      </div>
+      <div class="fb-card" tabindex="0" role="button" data-x="934" data-y="140" data-r="-7"
+           aria-label="Feedback card 5: “I wanted more time to spend on core concepts…” — activate to enlarge">
+        <img src="assets/img/feedback-card-5.jpg" alt="">
+      </div>
+    </div>
+    <figcaption>Five cards, unedited and unselected — the full set from that cohort. <span class="hint">Hover one to bring it up and read it; drag them wherever you like.</span></figcaption>
+  </figure>
+
+  <div class="fb-summary rv">
+    <div class="fb-scale">
+      <div class="fb-row">
+        <div class="q">This workshop was helpful</div>
+        <div class="fb-dots">
+          <span class="fb-dot"></span><span class="fb-dot"></span><span class="fb-dot"></span>
+          <span class="fb-dot"></span><span class="fb-dot hit"></span>
+        </div>
+        <div class="fb-ends"><span>Not at all</span><span>Very helpful</span></div>
+        <span class="fb-tally"><b>5 of 5</b> marked “Very helpful”</span>
+      </div>
+      <div class="fb-row">
+        <div class="q">I understood the concepts</div>
+        <div class="fb-dots">
+          <span class="fb-dot"></span><span class="fb-dot"></span><span class="fb-dot"></span>
+          <span class="fb-dot"></span><span class="fb-dot hit"></span>
+        </div>
+        <div class="fb-ends"><span>Not at all</span><span>Understood well</span></div>
+        <span class="fb-tally"><b>4 of 5</b> marked “Understood well”, one marked four</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="fb-grid">
+    <div class="fb-q rv">
+      <p>It was a very informative and fun session. I got to learn many things regarding UI/UX, which developed a new interest in me towards UI/UX.</p>
+      <div class="meta">Workshop participant
+        <span class="mini"><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i></span>
+      </div>
+    </div>
+    <div class="fb-q rv">
+      <p>Good, interesting, got a knowledge about design technique, got an idea how the design is done in industry. Great workshop.</p>
+      <div class="meta">Workshop participant
+        <span class="mini"><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i></span>
+      </div>
+    </div>
+    <div class="fb-q rv">
+      <p>Sir, it was a good experience to learn about UI/UX. In this 5 days I learn many things in UI/UX — and thank you for the session, Sir.</p>
+      <div class="meta">Workshop participant
+        <span class="mini"><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i></span>
+      </div>
+    </div>
+    <div class="fb-q rv">
+      <p>It was fun and interactive and a very engaging workshop. I had an opportunity to learn new skills.</p>
+      <div class="meta">Workshop participant
+        <span class="mini"><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i></span>
+      </div>
+    </div>
+    <div class="fb-q rv">
+      <p>Definitely the workshop was very helpful — especially when I got to know about the basics and core concepts and principles of UI/UX design.</p>
+      <div class="meta">Workshop participant
+        <span class="mini"><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i><i></i></span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════ SESSION — teaching camel lives here now ══════ -->
+<section id="colleges" class="wrap">
+  <div class="sk rv">Inside the room</div>
+  <h2 class="rv">What a session looks like</h2>
+  <p class="intro rv">No lecture slides for three days. Teams leave with something they built and tested.</p>
+
+  <div class="journey rv">
+    <div class="scene">
+      <img class="students" src="assets/img/classroom-students.svg" alt="Workshop participants">
+      <img class="teach" src="assets/img/camel-teaching.png" alt="Camel teaching at a board">
+    </div>
+    <div class="track"><span class="line"></span></div>
+    <div class="jgrid">
+      <div class="jstep" style="--i:0">
+        <div class="jtop"><span class="jicon"><svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+<circle cx="8" cy="9" r="3.2" stroke="#241C10" stroke-width="2" opacity=".26"/>
+<circle cx="36" cy="35" r="3.2" stroke="#241C10" stroke-width="2" opacity=".26"/>
+<path d="M12 18v-4.5a1.5 1.5 0 011.5-1.5H18" stroke="#241C10" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M32 18v-4.5a1.5 1.5 0 00-1.5-1.5H26" stroke="#241C10" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M12 26v4.5A1.5 1.5 0 0013.5 32H18" stroke="#241C10" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M32 26v4.5a1.5 1.5 0 01-1.5 1.5H26" stroke="#241C10" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="22" cy="22" r="5.6" fill="#FDECC3" stroke="#F0A415" stroke-width="2.5"/></svg></span><span class="jnum">01</span></div>
+        <h4>Frame the real problem</h4>
+        <p>Most teams arrive solving the wrong one. Day one is spent finding out which one actually matters.</p>
+        <span class="jday">Day 1</span>
+      </div><div class="jstep" style="--i:1">
+        <div class="jtop"><span class="jicon"><svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+<path d="M5 12a4 4 0 014-4h15a4 4 0 014 4v7a4 4 0 01-4 4H14l-6 5v-5a3 3 0 01-3-3z" stroke="#241C10" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M19 26a4 4 0 014-4h12a4 4 0 014 4v6a4 4 0 01-4 4h-2l-6 4v-4a4 4 0 01-4-4z" fill="#FDECC3" stroke="#F0A415" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M11 14h10" stroke="#241C10" stroke-width="2" stroke-linecap="round" opacity=".4"/></svg></span><span class="jnum">02</span></div>
+        <h4>Talk to actual users</h4>
+        <p>Participants run their own interviews — no role-play, no personas invented in the room.</p>
+        <span class="jday">Day 2</span>
+      </div><div class="jstep" style="--i:2">
+        <div class="jtop"><span class="jicon"><svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+<rect x="5" y="8" width="25" height="21" rx="3" stroke="#241C10" stroke-width="2.2"/>
+<path d="M10 15h11M10 21h7" stroke="#241C10" stroke-width="2" stroke-linecap="round" opacity=".42"/>
+<path d="M29 31l9-9-4.5-4.5-9 9L23 33z" fill="#FDECC3" stroke="#F0A415" stroke-width="2.2" stroke-linejoin="round"/></svg></span><span class="jnum">03</span></div>
+        <h4>Sketch, build, test</h4>
+        <p>Paper to prototype in a day, then straight in front of someone who's never seen it.</p>
+        <span class="jday">Day 3</span>
+      </div><div class="jstep" style="--i:3">
+        <div class="jtop"><span class="jicon"><svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+<rect x="6" y="6" width="30" height="21" rx="3" stroke="#241C10" stroke-width="2.2"/>
+<path d="M21 27v8M14 38l7-3 7 3" stroke="#241C10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 17l5 5 11-11" stroke="#F0A415" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="jnum">04</span></div>
+        <h4>Present and get assessed</h4>
+        <p>Work is critiqued properly. The certificate reflects what was actually done.</p>
+        <span class="jday">Day 4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery rv">
+    <figure><img src="assets/img/workshop-classroom.jpg" alt="Design workshop session in a college computer lab"></figure>
+    <figure><img src="assets/img/workshop-group.jpg" alt="Participants with their course completion certificates"></figure>
+    <figure><img src="assets/img/workshop-group2.jpg" alt="Workshop group photo in a college classroom"></figure>
+    <figure><img src="assets/img/workshop-certificates.jpg" alt="Celebrating certificates after a UI/UX skill lab"></figure>
+    <figure><img src="assets/img/workshop-feedback.jpg" alt="Handwritten feedback cards from workshop participants"></figure>
+  </div>
+</section>
+
+<!-- ══════ FACILITATOR ══════ -->
+<section id="about" class="wrap">
+  <div class="sk rv">Who teaches</div>
+  <h2 class="rv">You get the founder, not an associate</h2>
+  <p class="intro rv">The thing a training vendor can't say.</p>
+  <div class="fac rv">
+    <div class="fac-head">
+      <img src="assets/img/avatar-vijay.png" alt="Vijay Kamat">
       <div>
-        <span class="kicker">What we do</span>
-        <h2>Turn on <span class="serif-accent">growth</span></h2>
+        <h3>Vijay Kamat</h3>
+        <div class="fac-role">Founder, Creative Camel &middot; Lead Facilitator</div>
+        <div class="fac-role2">Design Manager &mdash; Enterprise &amp; Platform UX, athenahealth</div>
       </div>
     </div>
-    <div class="services">
-      <div class="service reveal">
-        <div class="service-card">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
-              <path d="M10 5 L22 5 L27 12 L16 27 L5 12 Z"/>
-              <path d="M5 12 L27 12 M13 12 L16 27 L19 12 M10 5 L13 12 M22 5 L19 12"/>
-            </svg>
-          </span>
-          <h3>Branding</h3>
-          <span class="promise">Get recognized. Get funded.</span>
-          <p>We turn you into a brand investors trust and users remember — identity, voice and design that impress, engage and convert.</p>
-          <span class="num">01</span>
-        </div>
-      </div>
-      <div class="service reveal reveal-d1">
-        <div class="service-card">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
-              <rect x="4" y="6" width="24" height="16" rx="2"/>
-              <path d="M16 22 L16 26 M11 27.5 L21 27.5"/>
-            </svg>
-          </span>
-          <h3>Website Design</h3>
-          <span class="promise">Modern, sleek, high converting.</span>
-          <p>We sharpen your sales funnel, tighten your copy and build modern layouts that turn visitors into customers.</p>
-          <span class="num">02</span>
-        </div>
-      </div>
-      <div class="service reveal reveal-d2">
-        <div class="service-card">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
-              <circle cx="14" cy="14" r="8.5"/>
-              <path d="M20.5 20.5 L27 27"/>
-            </svg>
-          </span>
-          <h3>Complete UX</h3>
-          <span class="promise">UX that drives results.</span>
-          <p>Research driven insights and strategic design come together in experiences that boost engagement and retention.</p>
-          <span class="num">03</span>
-        </div>
+
+    <div class="fac-body">
+      <p><b>Nineteen years</b> designing enterprise software — healthcare, capital markets and industrial systems — and the last decade building the teams that do it.</p>
+      <p>He has hired, coached and promoted designers across four organisations and <b>mentored over 100 designers</b> through structured capability programmes. The workshops are built from that same material — the levelling frameworks, critique practice and research methods he uses at work every week, not a syllabus assembled for teaching.</p>
+    </div>
+
+    <div class="fac-stats">
+      <div><b>19+</b><span>Years in enterprise UX</span></div>
+      <div><b>100+</b><span>Designers mentored</span></div>
+      <div><b>20</b><span>Person UX org led</span></div>
+      <div><b>160K+</b><span>User platform</span></div>
+    </div>
+
+    <div class="worked">
+      <h5>Where he has worked</h5>
+      <div class="logo-wall"><div class="logo-tile wide"><img src="assets/img/logos/athenahealth.svg" alt="athenahealth"></div><div class="logo-tile wide"><img src="assets/img/logos/wellsfargo.png" alt="Wells Fargo"></div><div class="logo-tile tall"><img src="assets/img/logos/publicissapient.svg" alt="Publicis Sapient"></div><div class="logo-tile square"><img src="assets/img/logos/ge.svg" alt="GE"></div><div class="logo-tile mid"><img src="assets/img/logos/socgen.svg" alt="Soci&eacute;t&eacute; G&eacute;n&eacute;rale"></div><div class="logo-tile tall"><img src="assets/img/logos/goldmansachs.svg" alt="Goldman Sachs"></div><div class="logo-tile mid"><img src="assets/img/logos/tietoevry.svg" alt="Tieto"></div><div class="logo-tile mid"><img src="assets/img/logos/hella.svg" alt="Hella"></div></div>
+    </div>
+
+    <div class="fac-meta">
+      <div class="fm">
+        <h5>Recognition</h5>
+        <ul class="stack">
+          <li>Design Excellence Award, Wells Fargo</li>
+          <li>Partner Excellence Award, GE</li>
+          <li>STAR Performer, Tieto</li>
+          <li>Microsoft Community Contributor</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="kicker">Our process</span>
-        <h2>From first call to <span class="serif-accent">handover</span></h2>
-      </div>
-    </div>
-    <div class="process pinboard">
-      <div class="pin-card pc-1 reveal">
-        <div class="pin-tilt">
-          <span class="pin" aria-hidden="true"></span>
-          <div class="pin-inner">
-            <span class="pnum">01</span>
-            <h3>Free call</h3>
-            <p>A detailed outline of what we can do for you, with services tailored to your needs.</p>
-          </div>
-        </div>
-      </div>
-      <div class="pin-card pc-2 reveal reveal-d1">
-        <div class="pin-tilt">
-          <span class="pin" aria-hidden="true"></span>
-          <div class="pin-inner">
-            <span class="pnum">02</span>
-            <h3>Research</h3>
-            <p>We deep dive into your users' needs and learn everything there is to learn.</p>
-          </div>
-        </div>
-      </div>
-      <div class="pin-card pc-3 reveal reveal-d1">
-        <div class="pin-tilt">
-          <span class="pin" aria-hidden="true"></span>
-          <div class="pin-inner">
-            <span class="pnum">03</span>
-            <h3>Design</h3>
-            <p>We brainstorm ideas, create new designs and build working prototypes.</p>
-          </div>
-        </div>
-      </div>
-      <div class="pin-card pc-4 reveal reveal-d2">
-        <div class="pin-tilt">
-          <span class="pin" aria-hidden="true"></span>
-          <div class="pin-inner">
-            <span class="pnum">04</span>
-            <h3>User testing</h3>
-            <p>We test designs and prototypes with real users and fold their feedback back in.</p>
-          </div>
-        </div>
-      </div>
-      <div class="pin-card pc-5 reveal reveal-d2">
-        <div class="pin-tilt">
-          <span class="pin" aria-hidden="true"></span>
-          <div class="pin-inner">
-            <span class="pnum">05</span>
-            <h3>Build &amp; handover</h3>
-            <p>We build your website, app and brand — then hand over all the material.</p>
-          </div>
-        </div>
-      </div>
+<!-- ══════ PROOF ══════ -->
+<section id="corporates" class="wrap">
+  <div class="sk rv">Proof</div>
+  <h2 class="rv">Assessed, certified, remembered</h2>
+  <p class="intro rv">Attendance certificates are easy. These are earned against assessed work.</p>
+
+  <div class="spot rv">
+    <div class="spot-media"><img src="assets/img/certificate.jpg" alt="Creative Camel certificate of completion"></div>
+    <div class="spot-body">
+      <span class="pill">The certificate</span>
+      <h3>Something worth putting on a wall</h3>
+      <p>Every participant is assessed on the work they produced in the room — the prototype, the research, the critique — not on having turned up. The certificate names the programme, the hours and the dates, and carries a reference number.</p>
+      <ul class="ticks">
+        <li>Assessed against real output, not attendance</li>
+        <li>Programme, hours and dates stated on the face</li>
+        <li>Referenced and verifiable for CVs and LinkedIn</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="ws-banner reveal">
-      <div>
-        <span class="kicker">The other superpower we bring</span>
-        <h2>Design Thinking <span class="serif-accent">workshops</span></h2>
-        <p>We empower teams and campuses to master design thinking, an essential mindset for innovation and growth. Hands on, energetic and tailored to the last detail.</p>
-        <div class="ws-stats">
-          <div><b><span data-count-to="5000">0</span>+</b><span>Happy participants</span></div>
-          <div><b><span data-count-to="100">0</span>+</b><span>Workshops delivered</span></div>
-          <div><b><span data-count-to="18">0</span>+</b><span>Years of experience</span></div>
-        </div>
-        <a class="btn btn-primary" href="workshops.html">Explore workshops</a>
+<!-- ══════ SELECTED WORK — full section, not a footnote ══════ -->
+<section id="projects" class="wrap">
+  <div class="sk rv">The studio</div>
+  <h2 class="rv">What we design when we're not teaching</h2>
+  <p class="intro rv">Live client work is what keeps the teaching current — every method in the syllabus is one we're using this week.</p>
+
+  <div class="work-grid">
+    <a class="work rv" href="fittrack.html">
+      <div class="media tint-fittrack"><img class="phone" src="assets/img/fittrack-hero.png" alt="FitTrack app onboarding screen"></div>
+      <div class="wb">
+        <span class="wtag">Mobile App · UX</span>
+        <h3>FitTrack</h3>
+        <p>A fitness companion designed to keep people moving every day.</p>
       </div>
-      <img class="ws-photo" src="assets/img/workshop-classroom.jpg" alt="A Creative Camel design thinking workshop in progress at an engineering college">
-    </div>
+    </a>
+    <a class="work rv" href="practworks.html">
+      <div class="media tint-practwork"><video src="assets/video/PractWorks.mp4" autoplay muted loop playsinline aria-label="PractWorks learning platform demo"></video></div>
+      <div class="wb">
+        <span class="wtag">EdTech · Web App</span>
+        <h3>PractWorks</h3>
+        <p>An AI-powered practice platform for students — practice that actually works.</p>
+      </div>
+    </a>
+    <a class="work rv" href="https://ambit.edu.in/#/" target="_blank" rel="noopener">
+      <div class="media tint-ambit"><video src="assets/video/AMBIT.mp4" autoplay muted loop playsinline aria-label="AMBIT engineering college website demo"></video></div>
+      <div class="wb">
+        <span class="wtag">Education · Website</span>
+        <h3>AMBIT</h3>
+        <p>A global-campus website for an engineering institute in Belagavi.</p>
+      </div>
+    </a>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="kicker">Testimonials</span>
-        <h2>What clients say about us</h2>
-      </div>
+
+<footer id="contact">
+  <div class="foot-cta">
+    <div>
+      <h3>Bring design thinking to your campus or team</h3>
+      <p>Tell us the group, the time you have and what you want them to walk away with — we'll shape the programme around it.</p>
     </div>
-    <div class="quotes">
-      <figure class="quote reveal">
-        <span class="mark">“</span>
-        <p>Creative Camel helped us build our online presence and increase our sales by 30%. I am grateful to their team for all the effort they took to make this project their own!</p>
-        <footer>
-          <img src="assets/img/avatar-1.png" alt="">
-          <div><b>Raghavendra Heble</b><span>PK Industries</span></div>
-        </footer>
-      </figure>
-      <figure class="quote reveal reveal-d1">
-        <span class="mark">“</span>
-        <p>The team knows UX and how to build a great user experience. They have helped us transform our basic designs into amazing UIs.</p>
-        <footer>
-          <img src="assets/img/avatar-2.png" alt="">
-          <div><b>Bhaskar</b><span>PHM Solutions</span></div>
-        </footer>
-      </figure>
-      <figure class="quote reveal reveal-d2">
-        <span class="mark">“</span>
-        <p>I had no idea what UX is and how the process works. They explained everything in great detail, which helped me understand what I needed to take my app to the next level!</p>
-        <footer>
-          <img src="assets/img/avatar-3.png" alt="">
-          <div><b>Kayvalya Rao</b><span>Tech Enterprises</span></div>
-        </footer>
-      </figure>
+    <a class="btn btn-light" href="mailto:info@creativecamel.in">Start a conversation →</a>
+  </div>
+
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/img/logo-camel-heart-light.png" alt="Creative Camel Studio">
+      <div class="tagline">Designing with a heart</div>
+      <p>A design thinking practice for campuses and companies, run out of Bengaluru.</p>
+    </div>
+
+    <div class="foot-col">
+      <h4>Programmes</h4>
+      <a href="#programmes">Corporate Trainings</a>
+      <a href="#programmes">Institutional Workshops</a>
+      <a href="#programmes">Aspiring Individuals</a>
+      <a href="#colleges">What a session looks like</a>
+    </div>
+
+    <div class="foot-col">
+      <h4>Studio</h4>
+      <a href="#projects">Selected work</a>
+      <a href="fittrack.html">FitTrack</a>
+      <a href="practworks.html">PractWorks</a>
+      <a href="https://ambit.edu.in/#/">AMBIT</a>
+    </div>
+
+    <div class="foot-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:info@creativecamel.in">info@creativecamel.in</a>
+      <span class="li">Bengaluru, Karnataka</span>
+      <span class="li">Mon–Fri, 10am–6pm IST</span>
+      <a href="#about">About Vijay</a>
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal"><h2>FAQs</h2></div>
-    <div class="faq reveal">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-1">
-          Why does UX design matter?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" id="faq-a-1">
-          <div class="faq-a-inner"><p>Good UX is the difference between a product people tolerate and a product people love. It reduces friction, builds trust and directly moves the numbers you care about — sign ups, sales and retention.</p></div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-2">
-          What kind of impact can I expect?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" id="faq-a-2">
-          <div class="faq-a-inner"><p>A sharper brand, a clearer story and measurably better conversion. One of our clients saw a 30% lift in sales after we rebuilt their online presence — results vary, but we design for outcomes, not just looks.</p></div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-3">
-          How long does a project take?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" id="faq-a-3">
-          <div class="faq-a-inner"><p>It depends on scope: a branding project typically runs 2–4 weeks, a website 4–8 weeks, and a full UX engagement longer. You'll get a clear timeline after the free call — and we stick to it.</p></div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-4">
-          What about pricing?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" id="faq-a-4">
-          <div class="faq-a-inner"><p>Every project is scoped and priced after the free call, so you only pay for what you need. No hidden costs, no surprises — just a clear proposal you can say yes to.</p></div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-5">
-          Do you offer post launch support?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" id="faq-a-5">
-          <div class="faq-a-inner"><p>Yes. Every project ends with a complete handover of all material, and we stay available for support and improvements after launch — including ongoing retainers if you want us around long term.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="wrap reveal">
-    <h2>Give your idea the <span class="light">boost</span> it deserves</h2>
-    <p>Book a free UX audit — we'll show you exactly where your product can improve.</p>
-    <a class="btn btn-primary" href="contact.html">Book a free UX audit</a>
-  </div>
-</section>
-
-<footer class="site">
-  <div class="wrap" style="padding:0">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="assets/img/logo-camel-heart-light.png" alt="Creative Camel Studio">
-        <div class="tagline">Designing with a heart</div>
-      </div>
-      <div class="foot-col">
-        <h4>Studio</h4>
-        <a href="index.html">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="workshops.html">Workshops &amp; Mentoring</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="foot-col">
-        <h4>Get in touch</h4>
-        <a href="mailto:info@creativecamel.in">info@creativecamel.in</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© <span id="year">2026</span> Creative Camel Studio. All rights reserved.</span>
-      <span>Made with ♥ in Bengaluru</span>
-    </div>
+  <div class="foot-bottom">
+    <span>&copy; <span id="yr">2026</span> Creative Camel Studio. All rights reserved.</span>
+    <span>Made with <span class="heart">&hearts;</span> in Bengaluru</span>
   </div>
 </footer>
 
-<script src="assets/script.js?v=6"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // ?still=1 — show everything instantly, for screenshots/printing (reveals otherwise
+  // race the capture and come out half-faded).
+  var still = /[?&]still=1/.test(location.search);
+  if (still) {
+    reduce = true;
+    // the hero is sized in vh; a tall full-page capture window would blow it up,
+    // so pin it to what it measures at a normal 1000px viewport.
+    var hc = document.querySelector('.hero-card');
+    if (hc) hc.style.minHeight = '520px';
+  }
+
+  // Heartbeat once after the mark has landed — a greeting, not a loop.
+  var mark = document.getElementById('mark');
+  if (mark && !reduce) {
+    var heart = mark.querySelector('.mark-heart');
+    setTimeout(function(){ mark.classList.add('beat'); }, 1150);
+    // The greeting beat is a finite override of the infinite idle pulse — drop the
+    // class once it finishes, or idleBeat never resumes and the heart dies after one beat.
+    if (heart) heart.addEventListener('animationend', function(e){
+      if (e.animationName === 'heartbeat') mark.classList.remove('beat');
+    });
+  }
+
+  // Count-up, triggered on reveal. Skipped entirely under reduced motion.
+  var counters = document.querySelectorAll('.cnt');
+  var run = function(el){
+    var to = +el.dataset.to, t0 = null, dur = 1100;
+    var tick = function(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0)/dur, 1);
+      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))).toLocaleString();
+      if(p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  if (reduce) {
+    counters.forEach(function(el){ el.textContent = (+el.dataset.to).toLocaleString(); });
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ run(e.target); io.unobserve(e.target); } });
+    }, {threshold:.5});
+    counters.forEach(function(el){ io.observe(el); });
+  } else {
+    counters.forEach(run);
+  }
+
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  // Looping preview videos: still for reduced-motion users (matches the live site),
+  // otherwise nudged into playing since some contexts ignore the autoplay attribute.
+  var vids = document.querySelectorAll('.work video');
+  vids.forEach(function(v){
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); return; }
+    v.muted = true; v.playsInline = true;
+    var go = function(){ var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); };
+    if (v.readyState >= 2) go(); else v.addEventListener('loadeddata', go, {once:true});
+  });
+
+  // Camel follows the pointer, damped. Marketing-page decoration, so it's gated to
+  // fine pointers and reduced-motion off. Writes transform on its own layer (.mark-par)
+  // so it never collides with the entrance or the breathing loop.
+  var par = document.getElementById('markPar');
+  var heroCard = document.querySelector('.hero-card');
+  var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (par && heroCard && fine && !reduce) {
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+    var step = function(){
+      cx += (tx - cx) * 0.075; cy += (ty - cy) * 0.075;
+      par.style.transform = 'translate(' + cx.toFixed(2) + 'px,' + cy.toFixed(2) + 'px)';
+      if (Math.abs(tx-cx) > 0.08 || Math.abs(ty-cy) > 0.08) { raf = requestAnimationFrame(step); }
+      else { par.style.transform = 'translate(' + tx + 'px,' + ty + 'px)'; raf = null; }
+    };
+    var kick = function(){ if (!raf) raf = requestAnimationFrame(step); };
+    heroCard.addEventListener('pointermove', function(e){
+      var r = heroCard.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width  - 0.5) * -22;
+      ty = ((e.clientY - r.top)  / r.height - 0.5) * -14;
+      kick();
+    });
+    heroCard.addEventListener('pointerleave', function(){ tx = 0; ty = 0; kick(); });
+  }
+
+  // Scroll reveal for everything below the hero. One-shot: unobserved once shown,
+  // so nothing re-animates when you scroll back up. Staggered 70ms within a section.
+  var rv = document.querySelectorAll('.rv');
+  if (reduce) {
+    rv.forEach(function(el){ el.classList.add('in'); });
+  } else if ('IntersectionObserver' in window) {
+    rv.forEach(function(el){
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function(c){
+        return c.classList && c.classList.contains('rv');
+      });
+      el.style.transitionDelay = (Math.min(sibs.indexOf(el), 5) * 0.07) + 's';
+    });
+    var rio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(el){ rio.observe(el); });
+  } else {
+    rv.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Feedback table: hover a card to bring it up and read it, drag it to move it.
+  // Pointer events so mouse, pen and trackpad all behave the same.
+  (function(){
+    var table = document.getElementById('fbTable');
+    if (!table) return;
+    var cards = Array.prototype.slice.call(table.querySelectorAll('.fb-card'));
+    var scattered = window.matchMedia('(min-width:901px)');
+    var fine      = window.matchMedia('(hover:hover) and (pointer:fine)');
+    var READ_W = 390;                     // close to the photos' native width
+    var EDGE   = 12;                      // keep the enlarged card off the table edge
+    var z = 10, raised = null, dragging = false, timer = 0, liftedAt = 0, pos = [];
+
+    cards.forEach(function(c, i){
+      pos[i] = {x:+c.dataset.x, y:+c.dataset.y, r:+c.dataset.r};
+      c.dataset.i = i;
+      place(c);
+    });
+    function place(c){
+      var s = pos[+c.dataset.i];
+      c.style.transform = 'translate('+s.x+'px,'+s.y+'px) rotate('+s.r+'deg)';
+    }
+    function lift(c){
+      if (raised && raised !== c) drop(raised);
+      raised = c; liftedAt = Date.now();
+      table.classList.add('has-up');
+      c.classList.add('up');
+      c.style.zIndex = ++z;
+      var s = pos[+c.dataset.i], w = c.offsetWidth, h = c.offsetHeight;
+      var k = Math.min(READ_W / w, (table.clientHeight - EDGE*2) / h,
+                       (table.clientWidth - EDGE*2) / w);
+      // grow around its own centre, nudged back inside the table if that overflows
+      var cx = clamp(s.x + w/2, w*k/2 + EDGE, table.clientWidth  - w*k/2 - EDGE);
+      var cy = clamp(s.y + h/2, h*k/2 + EDGE, table.clientHeight - h*k/2 - EDGE);
+      c.style.transform = 'translate('+(cx - w/2)+'px,'+(cy - h/2)+'px) ' +
+                          'rotate(0deg) scale('+k+')';
+      c.setAttribute('aria-expanded','true');
+    }
+    function clamp(v, lo, hi){ return hi < lo ? (lo + hi)/2 : Math.max(lo, Math.min(hi, v)); }
+    function drop(c){
+      c.classList.remove('up');
+      c.setAttribute('aria-expanded','false');
+      place(c);
+      if (raised === c) { raised = null; table.classList.remove('has-up'); }
+    }
+    function cancel(){ if (timer) { clearTimeout(timer); timer = 0; } }
+
+    cards.forEach(function(c){
+      c.setAttribute('aria-expanded','false');
+
+      // hovering is the whole interaction: no click needed to read one
+      c.addEventListener('pointerenter', function(e){
+        if (dragging || !scattered.matches || !fine.matches) return;
+        if (e.pointerType === 'touch') return;
+        cancel();
+        // a beat before it grows, so sweeping across the table doesn't flick
+        // through all five on the way past
+        timer = setTimeout(function(){ timer = 0; if (raised !== c) lift(c); },
+                           raised ? 70 : 150);
+      });
+      c.addEventListener('pointerleave', function(){
+        cancel();
+        // the card grows under the pointer, so an immediate leave is the layout
+        // settling rather than the pointer actually going anywhere
+        if (raised === c && Date.now() - liftedAt < 140) return;
+        if (raised === c && !dragging) drop(c);
+      });
+
+      c.addEventListener('pointerdown', function(e){
+        cancel();
+        if (!scattered.matches) return;
+        if (raised && raised !== c) drop(raised);
+        var s = pos[+c.dataset.i];
+        var ox = s.x, oy = s.y, sx = e.clientX, sy = e.clientY, moved = false;
+        dragging = true;
+        c.setPointerCapture(e.pointerId);
+        c.classList.add('grab');
+        c.style.zIndex = ++z;
+
+        function move(ev){
+          var dx = ev.clientX - sx, dy = ev.clientY - sy;
+          if (!moved && (Math.abs(dx) > 4 || Math.abs(dy) > 4)) {
+            moved = true;
+            if (raised === c) drop(c);      // it shrinks back to size to be carried
+          }
+          if (!moved) return;
+          // keep them on the table, with a little slack at the edges
+          var maxX = table.clientWidth  - c.offsetWidth  + 24;
+          var maxY = table.clientHeight - c.offsetHeight + 20;
+          s.x = Math.max(-24, Math.min(maxX, ox + dx));
+          s.y = Math.max(-20, Math.min(maxY, oy + dy));
+          place(c);
+        }
+        function end(){
+          c.removeEventListener('pointermove', move);
+          c.removeEventListener('pointerup', end);
+          c.removeEventListener('pointercancel', end);
+          c.classList.remove('grab');
+          dragging = false;
+          // a tap with no movement reads the card — the only way in without a mouse
+          if (!moved) { if (raised !== c) lift(c); return; }
+          // after a real drag the pointer is still on the card, so hover resumes,
+          // but give it a beat so you can see where you put it down
+          if (fine.matches) timer = setTimeout(function(){ timer = 0; lift(c); }, 320);
+        }
+        c.addEventListener('pointermove', move);
+        c.addEventListener('pointerup', end);
+        c.addEventListener('pointercancel', end);
+      });
+
+      // keyboard: the cards are buttons, so tabbing to one must read it too
+      c.addEventListener('focus', function(){
+        // keyboard focus only — a mouse press focuses the card too, and that is a
+        // grab, not a request to read it
+        var kb = true;
+        try { kb = c.matches(':focus-visible'); } catch (err) {}
+        if (kb && scattered.matches && !dragging) lift(c);
+      });
+      c.addEventListener('blur',  function(){ if (raised === c) drop(c); });
+      c.addEventListener('keydown', function(e){
+        if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+        e.preventDefault();
+        if (!scattered.matches) return;
+        raised === c ? drop(c) : lift(c);
+      });
+    });
+
+    // off the table entirely: put whatever is up back down
+    table.addEventListener('pointerleave', function(){
+      cancel();
+      if (raised && !dragging) drop(raised);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && raised) { var c = raised; drop(c); c.blur(); }
+    });
+    // the enlarged card is positioned in px, so re-seat it if the table resizes
+    window.addEventListener('resize', function(){
+      cancel();
+      if (!raised) return;
+      if (!scattered.matches) drop(raised); else lift(raised);
+    });
+  })();
+
+  // Pointer-origin wipe — same behaviour already shipped on the live site.
+  var setOrigin = function(el, e){
+    var r = el.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    el.style.setProperty('--wipe-x', x+'px');
+    el.style.setProperty('--wipe-y', y+'px');
+    var far = Math.max(Math.hypot(x,y), Math.hypot(r.width-x,y),
+                       Math.hypot(x,r.height-y), Math.hypot(r.width-x,r.height-y));
+    el.style.setProperty('--wipe-d', Math.ceil(far*2)+'px');
+  };
+  document.querySelectorAll('.btn').forEach(function(el){
+    el.addEventListener('pointerenter', function(e){ setOrigin(el,e); });
+    el.addEventListener('pointerleave', function(e){ setOrigin(el,e); });
+  });
+
+  // Cursor companion — the native cursor stays put and the camel tags along
+  // behind it, catching up a sixth of the remaining distance each frame. Same
+  // easing and the same bloom-over-links as the red dot on the live site.
+  // in its own scope: the whole page shares one function scope, and the hero
+  // parallax above already owns `cx`/`cy` — two damped loops on one pair of
+  // variables fight each other and the camel lands short of the pointer
+  (function(){
+  if (!reduce && window.matchMedia &&
+      window.matchMedia('(hover:hover) and (pointer:fine)').matches &&
+      window.matchMedia('(min-width:901px)').matches) {
+    var cam = document.createElement('div');
+    cam.className = 'cur-camel away';
+    cam.setAttribute('aria-hidden', 'true');
+    var camImg = document.createElement('img');
+    camImg.src = 'assets/img/logo-camel-face.png';
+    camImg.alt = '';
+    cam.appendChild(camImg);
+    document.body.appendChild(cam);
+
+    // it sits off the pointer's bottom-right corner rather than under it, so the
+    // cursor itself stays readable. 24 = the 10px gap we want plus half the 28px
+    // mark, because the box is centred on this point — offsetting the centre
+    // instead of the corner keeps the mark still when it blooms over a link.
+    var OFF = 24;
+    var mx = 0, my = 0, camX = 0, camY = 0, shown = false, running = false;
+
+    function tick(){
+      camX += (mx - camX) * 0.16;
+      camY += (my - camY) * 0.16;
+      cam.style.transform = 'translate(' + (camX + OFF) + 'px,' + (camY + OFF) + 'px) ' +
+                            'translate(-50%,-50%)';
+      requestAnimationFrame(tick);
+    }
+
+    document.addEventListener('mousemove', function(e){
+      mx = e.clientX; my = e.clientY;
+      if (shown) return;
+      if (!running) {                       // start where the pointer is, not at 0,0
+        camX = mx; camY = my; running = true;
+        requestAnimationFrame(tick);
+      }
+      cam.classList.remove('away');
+      shown = true;
+    }, {passive:true});
+
+    document.addEventListener('mouseleave', function(){
+      cam.classList.add('away'); shown = false;
+    });
+
+    var clickable = 'a, button, input, textarea, select, [role="button"], .fb-card';
+    document.addEventListener('mouseover', function(e){
+      if (e.target.closest && e.target.closest(clickable)) cam.classList.add('on-link');
+    });
+    document.addEventListener('mouseout', function(e){
+      if (e.target.closest && e.target.closest(clickable)) cam.classList.remove('on-link');
+    });
+  }
+  })();
+})();
+</script>
 </body>
 </html>
