@@ -610,3 +610,60 @@ footer{background:var(--ink);color:#E7DFCB;border-radius:32px;margin:146px 18px 
   .prog .mt{grid-column:2;text-align:left}
   nav{flex-wrap:wrap;gap:16px}
 }
+
+/* Phone menu — below 720px the four links fold behind a menu button and open as
+   a stacked list inside the header. Not an absolute dropdown: the hero card has
+   overflow:hidden and would clip it. assets/nav.js toggles nav.open */
+.menu-btn{display:none}
+@media(max-width:720px){
+  nav{flex-wrap:wrap;gap:0}
+  .menu-btn{display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:42px;height:42px;padding:0 11px;margin-right:-8px;border:0;border-radius:50%;
+    background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;
+    transition:background .22s var(--ease-spring),transform .1s var(--ease-tap)}
+  .menu-btn:active{transform:scale(.9)}
+  .menu-btn span{display:block;height:2px;border-radius:2px;background:var(--ink);
+    transition:transform .4s var(--ease-spring)}
+  nav.open .menu-btn{background:rgba(255,255,255,.45)}
+  nav.open .menu-btn span:first-child{transform:translateY(3.5px) rotate(45deg)}
+  nav.open .menu-btn span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+  nav a.lnk{flex:0 0 100%;font-size:17px;opacity:0;visibility:hidden;max-height:0;overflow:hidden;
+    padding:0 2px;border-top:1px solid transparent;transform:translateY(-6px);
+    transition:max-height .45s var(--ease-spring),padding .45s var(--ease-spring),
+      opacity .3s var(--ease-spring),transform .45s var(--ease-spring),visibility 0s .45s}
+  nav a.lnk.on{opacity:0;border-bottom:0;padding-bottom:0;font-weight:800}
+  nav a.lnk{-webkit-tap-highlight-color:transparent}
+  nav.open a.lnk:active{opacity:.55;transition-duration:.1s}
+  nav.open a.lnk{opacity:1;visibility:visible;max-height:60px;padding:14px 2px;
+    border-top-color:var(--line-2);transform:none;transition-delay:0s}
+}
+
+/* Programmes on touch — the topic tables stay folded until the row is tapped
+   (index.html toggles .prog.open); the arrow turns down while one is open */
+.say-tap{display:none}
+@media (hover:none){
+  .say-hover{display:none}.say-tap{display:inline}
+  .prog{cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .prog .ttwrap{max-height:0;opacity:0;overflow:hidden;margin-top:0;
+    transition:max-height .6s var(--ease-spring),opacity .35s var(--ease-tap),margin-top .6s var(--ease-spring)}
+  .prog.open .ttwrap{max-height:760px;opacity:1;margin-top:18px}
+  .prog.open .arw{transform:rotate(90deg)}
+}
+
+/* Feedback on phones — four cards in a 2×2 square; the fifth sits out */
+.cap-four{display:none}
+@media(max-width:900px){
+  .fb-table{grid-template-columns:1fr 1fr;gap:10px;padding:12px}
+  .fb-card{padding:5px 5px 6px}
+  .fb-card:nth-child(n+5){display:none}
+  .cap-full{display:none}.cap-four{display:inline}
+}
+
+/* Phones read the session first, then the feedback, then the three programmes */
+@media(max-width:900px){
+  .trio{display:flex;flex-direction:column}
+  .trio>section{width:100%}
+  .trio>#colleges{order:1}
+  .trio>#feedback{order:2}
+  .trio>#programmes{order:3}
+}

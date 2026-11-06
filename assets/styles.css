@@ -76,6 +76,32 @@ nav a.lnk.on{opacity:1;border-bottom:2px solid var(--ink);padding-bottom:3px}
   .navwrap{padding:0}
   nav{flex-wrap:wrap;gap:16px}
 }
+/* Phone menu — below 720px the four links fold behind a menu button and open as
+   a stacked list inside the header. Not an absolute dropdown: the hero card has
+   overflow:hidden and would clip it. assets/nav.js toggles nav.open */
+.menu-btn{display:none}
+@media(max-width:720px){
+  nav{flex-wrap:wrap;gap:0}
+  .menu-btn{display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:42px;height:42px;padding:0 11px;margin-right:-8px;border:0;border-radius:50%;
+    background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;
+    transition:background .22s var(--ease-spring),transform .1s var(--ease-tap)}
+  .menu-btn:active{transform:scale(.9)}
+  .menu-btn span{display:block;height:2px;border-radius:2px;background:var(--ink);
+    transition:transform .4s var(--ease-spring)}
+  nav.open .menu-btn{background:rgba(255,255,255,.45)}
+  nav.open .menu-btn span:first-child{transform:translateY(3.5px) rotate(45deg)}
+  nav.open .menu-btn span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+  nav a.lnk{flex:0 0 100%;font-size:17px;opacity:0;visibility:hidden;max-height:0;overflow:hidden;
+    padding:0 2px;border-top:1px solid transparent;transform:translateY(-6px);
+    transition:max-height .45s var(--ease-spring),padding .45s var(--ease-spring),
+      opacity .3s var(--ease-spring),transform .45s var(--ease-spring),visibility 0s .45s}
+  nav a.lnk.on{opacity:0;border-bottom:0;padding-bottom:0;font-weight:800}
+  nav a.lnk{-webkit-tap-highlight-color:transparent}
+  nav.open a.lnk:active{opacity:.55;transition-duration:.1s}
+  nav.open a.lnk{opacity:1;visibility:visible;max-height:60px;padding:14px 2px;
+    border-top-color:var(--line-2);transform:none;transition-delay:0s}
+}
 .nav-links{display:flex;gap:32px;font-size:15px;color:var(--ink-soft)}
 .nav-links a{position:relative;padding:4px 0;font-weight:500;transition:opacity .2s var(--ease-tap)}
 .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:currentColor;transition:right .25s var(--ease-spring)}

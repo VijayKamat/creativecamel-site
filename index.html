@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/concept.css?v=1">
+<link rel="stylesheet" href="assets/concept.css?v=5">
 </head>
 <body>
 
@@ -27,6 +27,7 @@
     <div class="hwrap">
       <nav>
         <a class="brand" href="index.html"><img src="assets/img/logo-camel-face.png" alt="">Creative Camel</a>
+        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
         <a class="lnk on" href="#programmes">Programmes</a>
         <a class="lnk" href="#projects">Projects</a>
         <a class="lnk" href="#about">About</a>
@@ -70,11 +71,13 @@
   </div>
 </div>
 
+<!-- programmes, feedback and session: on phones the session comes first (concept.css .trio) -->
+<div class="trio">
 <!-- ══════ PROGRAMMES ══════ -->
 <section id="programmes" class="wrap">
   <div class="sk rv">The catalogue</div>
   <h2 class="rv">Three programmes</h2>
-  <p class="intro rv">Hover a programme to see what it covers. Every track now includes AI — used as a working tool, and designed for as a material.</p>
+  <p class="intro rv"><span class="say-hover">Hover</span><span class="say-tap">Tap</span> a programme to see what it covers. Every track now includes AI — used as a working tool, and designed for as a material.</p>
 
   <div class="prog rv">
     <div class="no">01</div>
@@ -128,7 +131,7 @@
         <img src="assets/img/feedback-card-5.jpg" alt="">
       </div>
     </div>
-    <figcaption>Five cards, unedited and unselected — the full set from that cohort. <span class="hint">Hover one to bring it up and read it; drag them wherever you like.</span></figcaption>
+    <figcaption><span class="cap-full">Five cards, unedited and unselected — the full set from that cohort.</span><span class="cap-four">Four of the five cards from that cohort, unedited.</span> <span class="hint">Hover one to bring it up and read it; drag them wherever you like.</span></figcaption>
   </figure>
 
   <div class="fb-summary rv">
@@ -250,6 +253,8 @@
     <figure><img src="assets/img/workshop-feedback.jpg" alt="Handwritten feedback cards from workshop participants"></figure>
   </div>
 </section>
+
+</div>
 
 <!-- ══════ FACILITATOR ══════ -->
 <section id="about" class="wrap">
@@ -508,6 +513,19 @@
     rv.forEach(function(el){ el.classList.add('in'); });
   }
 
+  // Programmes on touch: no hover, so a tap folds the topic table open and shut
+  (function(){
+    if (!window.matchMedia('(hover:none)').matches) return;
+    document.querySelectorAll('.prog').forEach(function(p){
+      p.setAttribute('role','button'); p.setAttribute('tabindex','0');
+      p.setAttribute('aria-expanded','false');
+      p.addEventListener('click', function(){
+        var open = p.classList.toggle('open');
+        p.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  })();
+
   // Feedback table: hover a card to bring it up and read it, drag it to move it.
   // Pointer events so mouse, pen and trackpad all behave the same.
   (function(){
@@ -724,5 +742,6 @@
   })();
 })();
 </script>
+<script src="assets/nav.js?v=1" defer></script>
 </body>
 </html>
