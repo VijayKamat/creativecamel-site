@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Thinking Proposal · Creative Camel Studio</title>
+<meta name="description" content="A design-thinking mentorship proposal from Creative Camel Studio, Bengaluru.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/logo-camel-face.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF6E6; --paper:#FFFDF8; --ink:#241C10; --soft:#463A26; --mute:#6B6455; --line:#E9DCC4;
+  --violet:#4A2673; --red:#FF3B30; --gold:#F5C26B;
+  --s1:#E8442E; --s2:#F0B45A; --s3:#2E7FE8; --s4:#9333EA; --s5:#1F9D6B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+em,.serif{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:600;color:var(--violet)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.kicker i{width:10px;height:10px;border-radius:50%;display:inline-block}
+h2{font-size:clamp(30px,4.4vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:800;margin-bottom:18px}
+h3{font-weight:800;letter-spacing:-.01em}
+.lede{font-size:18px;color:var(--soft);max-width:680px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px}
+
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,246,230,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;text-decoration:none;white-space:nowrap}
+.brand img{height:26px}
+.brand small{font-weight:500;color:var(--mute);font-size:13px}
+.nav{display:flex;gap:22px;font-size:14px;font-weight:600}
+.nav a{text-decoration:none;color:var(--soft)}
+.nav a:hover{color:var(--violet)}
+.pct{font-size:13px;font-weight:800;color:var(--violet);min-width:40px;text-align:right}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;background:linear-gradient(90deg,var(--s1),var(--s2),var(--s3),var(--s4),var(--s5));width:0}
+
+/* hero */
+.hero{padding:120px 0 72px;border-top:0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.wheel{position:relative;width:100%;max-width:470px;aspect-ratio:1;margin:0 auto}
+.wheel svg{width:100%;height:100%;overflow:visible}
+.wheel .seg{cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s;transform-origin:250px 250px}
+.wheel .seg:hover,.wheel .seg.on{transform:scale(1.045)}
+.wheel.dim .seg:not(.on){opacity:.35}
+.wheel .lbl{font-family:'Plus Jakarta Sans';font-weight:800;font-size:15px;fill:var(--ink);pointer-events:none}
+.wheel .center{position:absolute;inset:27%;border-radius:50%;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;box-shadow:0 10px 40px rgba(36,28,16,.08)}
+.wheel .center b{font-size:clamp(26px,3.6vw,40px);font-weight:800;line-height:1}
+.wheel .center span{font-size:13px;color:var(--mute);margin-top:6px}
+.hero h1{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.03em;font-weight:800;margin-bottom:22px}
+.hero h1 .for{display:block;font-size:.5em;letter-spacing:-.01em;margin-top:10px}
+.hero p.lede{margin-bottom:28px}
+.meta{border-top:1px solid var(--line)}
+.meta div{display:grid;grid-template-columns:130px 1fr;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.meta dt{color:var(--mute)}
+.meta dd{font-weight:700}
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.jump a{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:13px;font-weight:700;text-decoration:none}
+.jump a i{width:9px;height:9px;border-radius:50%}
+
+/* why */
+.why{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+.why p{color:var(--soft);font-size:17px;margin-bottom:16px}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.6vw,30px);line-height:1.3;color:var(--violet);border-left:4px solid var(--red);padding-left:22px;margin-top:6px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.stat{padding:22px}
+.stat b{display:block;font-size:38px;font-weight:800;color:var(--violet);line-height:1}
+.stat span{font-size:13px;color:var(--mute);display:block;margin-top:8px}
+
+/* explorer */
+.explore{display:grid;grid-template-columns:320px 1fr;gap:28px;margin-top:36px}
+.tabs{display:flex;flex-direction:column;gap:8px}
+.tab{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--paper);cursor:pointer;text-align:left;font:inherit;font-weight:700;font-size:16px;color:var(--ink);transition:all .2s}
+.tab .no{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:14px;flex:none}
+.tab.on{background:var(--ink);color:var(--cream);border-color:var(--ink);transform:translateX(6px)}
+.panel{padding:34px;min-height:360px;position:relative;overflow:hidden}
+.panel .big{position:absolute;right:-10px;top:-30px;font-family:'Fraunces',serif;font-style:italic;font-size:200px;line-height:1;opacity:.08;font-weight:600}
+.panel h3{font-size:28px;margin-bottom:6px}
+.panel .q{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--violet);margin-bottom:18px}
+.panel .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px}
+.panel h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.panel ul{list-style:none}
+.panel li{padding:7px 0 7px 22px;position:relative;font-size:15px;color:var(--soft)}
+.panel li::before{content:'';position:absolute;left:0;top:15px;width:10px;height:2px;background:currentColor;opacity:.6}
+.panel .out{margin-top:22px;padding:14px 18px;border-radius:12px;background:var(--cream);font-size:15px}
+.panel .out b{color:var(--violet)}
+
+/* challenge stepper */
+.chal{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.brief{background:var(--violet);color:#fff;border-radius:18px;padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+.brief .kicker{color:var(--gold)}
+.brief h3{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:28px;line-height:1.25;margin-bottom:14px}
+.brief p{color:#E3D8F0}
+.steps{display:flex;gap:6px;margin-top:22px}
+.steps button{flex:1;height:6px;border:0;border-radius:3px;background:rgba(255,255,255,.25);cursor:pointer}
+.steps button.on{background:var(--gold)}
+.board{padding:30px;display:flex;flex-direction:column}
+.board .day{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.board h3{font-size:24px;margin:6px 0 12px}
+.board p{color:var(--soft)}
+.artifacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.note{padding:12px 14px;border-radius:4px;font-size:13.5px;font-weight:600;box-shadow:0 4px 10px rgba(36,28,16,.08);transform:rotate(var(--r,0deg));max-width:200px;animation:pop .45s cubic-bezier(.2,.9,.3,1.3) both}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.9) rotate(var(--r,0deg))}to{opacity:1;transform:rotate(var(--r,0deg))}}
+.board .nav2{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--cream);font:inherit;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:disabled{opacity:.3;cursor:default}
+
+/* builder */
+.builder{display:grid;grid-template-columns:380px 1fr;gap:28px;margin-top:36px}
+.controls{padding:28px;display:flex;flex-direction:column;gap:26px}
+.seglist{display:flex;flex-direction:column;gap:8px}
+.opt{padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:#fff;cursor:pointer;text-align:left;font:inherit}
+.opt b{display:block;font-size:15px}
+.opt span{font-size:13px;color:var(--mute)}
+.opt.on{border-color:var(--violet);background:#F6F0FC}
+.ctl label{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:10px}
+.ctl label output{color:var(--violet);font-weight:800}
+input[type=range]{width:100%;accent-color:var(--violet)}
+.agenda{padding:28px}
+.agenda-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.agenda-head h3{font-size:22px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:var(--cream)}
+.days{display:grid;gap:12px}
+.dayc{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fff;animation:pop .35s both}
+.dayc h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.dayc ul{list-style:none;display:grid;gap:6px}
+.dayc li{display:flex;gap:10px;font-size:14.5px}
+.dayc li b{min-width:200px}
+.dayc li span{color:var(--mute)}
+.ai{font-size:10px;font-weight:800;color:#fff;background:var(--s4);padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.teams{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--cream)}
+.teams .dots{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.teams .t{display:flex;gap:2px;padding:4px;border-radius:6px;background:#fff}
+.teams .t i{width:7px;height:7px;border-radius:50%;background:var(--violet)}
+.invest{margin-top:16px;padding:16px 18px;border-radius:14px;border:1px dashed var(--violet);font-size:14.5px}
+
+/* outcomes */
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.out6{padding:26px;position:relative;transition:transform .25s}
+.out6:hover{transform:translateY(-4px)}
+.out6 .n{font-family:'Fraunces',serif;font-style:italic;font-size:30px;color:#E8D9BC;position:absolute;right:20px;top:14px}
+.out6 h3{font-size:18px;margin-bottom:8px;padding-right:40px}
+.out6 p{color:var(--soft);font-size:15px}
+
+/* who */
+.who{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start;margin-top:30px}
+.face{width:220px;height:220px;border-radius:50%;background:var(--gold);overflow:hidden}
+.who h3{font-size:30px}
+.who .role{color:var(--violet);font-weight:700;margin:4px 0 16px}
+.who p{color:var(--soft);font-size:16.5px;margin-bottom:14px}
+.logos{margin-top:30px;background:var(--ink);border-radius:18px;padding:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px 18px;align-items:center;justify-items:center}
+.logos img{height:28px;max-width:140px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85}
+.awards{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.awards span{padding:9px 14px;border-radius:999px;background:#F3E6CC;font-size:13.5px;font-weight:700}
+
+/* proof */
+.pile{position:relative;height:440px;margin-top:30px;border-radius:18px;background:repeating-linear-gradient(0deg,transparent 0 31px,rgba(70,58,38,.06) 31px 32px),var(--paper);border:1px solid var(--line);overflow:hidden;touch-action:none}
+.pile img{position:absolute;width:230px;border-radius:6px;box-shadow:0 10px 30px rgba(36,28,16,.18);cursor:grab;user-select:none;-webkit-user-drag:none;transition:box-shadow .2s}
+.pile img:active{cursor:grabbing;box-shadow:0 18px 40px rgba(36,28,16,.28)}
+.pile .hint{position:absolute;right:18px;bottom:14px;font-size:13px;color:var(--mute);font-weight:600}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.quote{padding:24px}
+.quote p{font-family:'Fraunces',serif;font-style:italic;font-size:17px;line-height:1.45;margin-bottom:12px}
+.quote span{font-size:13px;color:var(--mute)}
+.photos{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;margin-top:20px}
+.photos img{width:100%;height:220px;object-fit:cover;border-radius:14px}
+.certrow{display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:center;margin-top:28px;padding:28px}
+.certrow img{border-radius:8px;box-shadow:0 12px 30px rgba(36,28,16,.15);transform:rotate(-2deg)}
+.certrow h3{font-size:24px;margin-bottom:10px}
+.certrow li{list-style:none;padding:6px 0;color:var(--soft)}
+.certrow li::before{content:'✓';color:var(--s5);font-weight:800;margin-right:10px}
+
+/* next */
+.next{background:var(--violet);color:#fff;border-top:0}
+.next h2{color:#fff}
+.next h2 em{color:var(--gold)}
+.next .lede{color:#E3D8F0}
+.nsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px 0}
+.ns{background:rgba(255,255,255,.08);border-radius:18px;padding:26px}
+.ns b{font-family:'Fraunces',serif;font-style:italic;font-size:36px;color:var(--gold);line-height:1}
+.ns h3{font-size:19px;margin:12px 0 6px}
+.ns p{color:#E3D8F0;font-size:15px}
+.ctabox{background:var(--cream);color:var(--ink);border-radius:20px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ctabox .big{font-size:24px;font-weight:800}
+.ctabox .small{color:var(--mute);font-size:14px}
+.ctabox .btns{display:flex;gap:10px;flex-wrap:wrap}
+footer{background:var(--ink);color:#CFC4AE;font-size:13px;padding:26px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+  .nav{display:none}
+  section{padding:72px 0}
+  .hero{padding:96px 0 56px}
+  .hero .wrap,.why,.explore,.chal,.builder,.who,.certrow{grid-template-columns:1fr}
+  .hero .wrap{gap:36px}
+  .wheel{max-width:360px}
+  .tabs{flex-direction:row;overflow-x:auto;padding-bottom:6px}
+  .tab{flex:none;padding:12px 14px;font-size:14px}
+  .tab.on{transform:none}
+  .panel{padding:24px}
+  .panel .cols{grid-template-columns:1fr}
+  .grid6,.quotes,.nsteps{grid-template-columns:1fr}
+  .photos{grid-template-columns:1fr 1fr}
+  .photos img:first-child{grid-column:span 2}
+  .logos{grid-template-columns:repeat(2,1fr)}
+  .face{width:160px;height:160px}
+  .dayc li{flex-direction:column;gap:0}
+  .dayc li b{min-width:0}
+  .pile{height:520px}
+  .pile img{width:170px}
+  .brand small{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../assets/img/logo-camel-heart.png" alt=""><span>Creative Camel</span><small id="barFor">· Design thinking proposal</small></a>
+    <nav class="nav">
+      <a href="#why">Why</a><a href="#method">Method</a><a href="#challenge">Challenge</a><a href="#programme">Programme</a><a href="#who">Who</a><a href="#next">Next steps</a>
+    </nav>
+    <div class="pct" id="pct">0%</div>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Design Thinking Mentorship</div>
+      <h1 id="heroTitle">Design thinking<span class="for"><em id="heroFor">for your college</em></span></h1>
+      <p class="lede" id="heroLede"></p>
+      <dl class="meta">
+        <div><dt>Prepared for</dt><dd id="metaFor">—</dd></div>
+        <div><dt>Prepared by</dt><dd>Vijay Kamat, Founder · Creative Camel Studio</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:vijay@creativecamel.in">vijay@creativecamel.in</a></dd></div>
+        <div><dt>Date</dt><dd id="metaDate">—</dd></div>
+        <div><dt>Formats</dt><dd id="metaFormats">—</dd></div>
+      </dl>
+      <div class="jump" id="jump"></div>
+    </div>
+    <div class="wheel" id="wheel" aria-label="The five stages of design thinking">
+      <svg viewBox="0 0 500 500" id="wheelSvg"></svg>
+      <div class="center"><b id="wheelBig">5 stages</b><span id="wheelSmall">Tap a stage to explore</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap why">
+    <div class="reveal">
+      <div class="kicker">Why now</div>
+      <h2 id="whyTitle"></h2>
+      <div id="whyBody"></div>
+    </div>
+    <div class="reveal">
+      <div class="pull">Design thinking is the skill of working out what to build, and for whom, before anyone builds it.</div>
+      <div class="stats">
+        <div class="stat card"><b data-count="5000">0</b><span>Students and professionals trained</span></div>
+        <div class="stat card"><b data-count="100">0</b><span>Workshops delivered</span></div>
+        <div class="stat card"><b data-count="19">0</b><span>Years designing enterprise software</span></div>
+        <div class="stat card"><b data-count="100">0</b><span>Designers mentored in industry</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">The method</div>
+      <h2>Five stages. <em>Every one done for real.</em></h2>
+      <p class="lede">No lecture slides for days on end. Participants move through the full cycle on a real problem. Pick a stage to see what happens in the room.</p>
+    </div>
+    <div class="explore reveal">
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div class="panel card" id="panel" role="tabpanel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE -->
+<section id="challenge">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">A sample challenge</div>
+      <h2>See a workshop <em>unfold.</em></h2>
+      <p class="lede">This is the kind of brief participants work on. Step through it to see what they produce at each stage.</p>
+    </div>
+    <div class="chal reveal">
+      <div class="brief">
+        <div>
+          <div class="kicker">The brief</div>
+          <h3 id="chalBrief"></h3>
+          <p id="chalWhy"></p>
+        </div>
+        <div class="steps" id="chalDots"></div>
+      </div>
+      <div class="board card" id="board"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME BUILDER -->
+<section id="programme">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Build your programme</div>
+      <h2>Shape it <em>around your group.</em></h2>
+      <p class="lede">Choose a format, the time you have and your group size. The agenda below builds itself from our actual syllabus. We fine-tune it with you on a call.</p>
+    </div>
+    <div class="builder reveal">
+      <div class="controls card">
+        <div>
+          <label style="font-weight:800;font-size:14px;display:block;margin-bottom:10px">Format</label>
+          <div class="seglist" id="formats"></div>
+        </div>
+        <div class="ctl"><label><span id="lenLabel">Days</span><output id="lenOut">3</output></label><input type="range" id="len" min="1" max="5" value="3"></div>
+        <div class="ctl"><label><span>Group size</span><output id="sizeOut">60</output></label><input type="range" id="size" min="10" max="120" step="5" value="60"></div>
+      </div>
+      <div class="agenda card">
+        <div class="agenda-head"><h3 id="agTitle">Your agenda</h3><div class="chips" id="agChips"></div></div>
+        <div class="days" id="days"></div>
+        <div class="teams" id="teams"></div>
+        <div class="invest" id="invest"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section id="outcomes">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Outcomes</div>
+      <h2 id="outTitle"></h2>
+    </div>
+    <div class="grid6" id="grid6"></div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Who teaches</div>
+      <h2>You get the founder, <em>not an associate.</em></h2>
+    </div>
+    <div class="who reveal">
+      <div class="face"><img src="../assets/img/avatar-vijay.png" alt="Vijay Kamat"></div>
+      <div>
+        <h3>Vijay Kamat</h3>
+        <div class="role">Founder, Creative Camel · Design Manager, Enterprise &amp; Platform UX, athenahealth</div>
+        <p>Nineteen years designing enterprise software across healthcare, capital markets and industrial systems, and the last decade building the teams that do it.</p>
+        <p>He has hired, coached and promoted designers across four organisations and mentored over 100 designers through structured capability programmes. Every session is built from that same material: the frameworks, critique practice and research methods he uses at work every week.</p>
+        <div class="awards"><span>Design Excellence Award, Wells Fargo</span><span>Partner Excellence Award, GE</span><span>STAR Performer, Tieto</span><span>Microsoft Community Contributor</span></div>
+      </div>
+    </div>
+    <div class="logos reveal">
+      <img src="../assets/img/logos/athenahealth.svg" alt="athenahealth"><img src="../assets/img/logos/wellsfargo.png" alt="Wells Fargo"><img src="../assets/img/logos/goldmansachs.svg" alt="Goldman Sachs"><img src="../assets/img/logos/ge.svg" alt="GE">
+      <img src="../assets/img/logos/socgen.svg" alt="Société Générale"><img src="../assets/img/logos/publicissapient.svg" alt="Publicis Sapient"><img src="../assets/img/logos/tietoevry.svg" alt="Tietoevry"><img src="../assets/img/logos/hella.svg" alt="Hella">
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Proof</div>
+      <h2>Straight from <em>the room.</em></h2>
+      <p class="lede">Every participant fills in the same feedback card before leaving. These are the real cards from a five-day cohort, unedited. Drag them around.</p>
+    </div>
+    <div class="pile reveal" id="pile">
+      <img src="../assets/img/feedback-card-1.jpg" alt="Feedback card" draggable="false">
+      <img src="../assets/img/feedback-card-2.jpg" alt="Feedback card" draggable="false">
+      <img src="../assets/img/feedback-card-3.jpg" alt="Feedback card" draggable="false">
+      <img src="../assets/img/feedback-card-4.jpg" alt="Feedback card" draggable="false">
+      <img src="../assets/img/feedback-card-5.jpg" alt="Feedback card" draggable="false">
+      <div class="hint">Drag the cards ↔</div>
+    </div>
+    <div class="quotes reveal">
+      <div class="quote card"><p>“It was an extraordinary workshop. We enjoyed a lot and didn't realise how the time flew by. I wish it was longer.”</p><span>Pradhan, workshop participant</span></div>
+      <div class="quote card"><p>“Very engaging workshop. I loved the hands-on approach and building the app in real time.”</p><span>Sakshi, workshop participant</span></div>
+      <div class="quote card"><p>“The workshop brought out a new avenue for me and I find this field fascinating now.”</p><span>Suraj, workshop participant</span></div>
+    </div>
+    <div class="photos reveal">
+      <img src="../assets/img/workshop-classroom.jpg" alt="Workshop in a classroom">
+      <img src="../assets/img/workshop-group.jpg" alt="Participants with certificates">
+      <img src="../assets/img/workshop-group2.jpg" alt="Workshop group photo">
+    </div>
+    <div class="certrow card reveal">
+      <img src="../assets/img/certificate.jpg" alt="Creative Camel certificate">
+      <div>
+        <h3>A certificate worth earning</h3>
+        <ul>
+          <li>Assessed against real output, not attendance</li>
+          <li>Programme, hours and dates stated on the face</li>
+          <li>Reference-numbered and verifiable for CVs and LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT -->
+<section class="next" id="next">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold)">Next steps</div>
+    <h2 id="ctaTitle"></h2>
+    <p class="lede">Three steps from here to a room full of people solving real problems.</p>
+    <div class="nsteps">
+      <div class="ns"><b>1</b><h3>A 20-minute call</h3><p>Tell us about the group, the time you have and what you want them to walk away with.</p></div>
+      <div class="ns"><b>2</b><h3>A tailored programme</h3><p>Within a week you receive the agenda, outcomes and investment, designed around your group.</p></div>
+      <div class="ns"><b>3</b><h3>Delivery &amp; certificates</h3><p>We run the sessions, assess the work and share a short outcomes report afterwards.</p></div>
+    </div>
+    <div class="ctabox">
+      <div><div class="big">vijay@creativecamel.in</div><div class="small">Creative Camel Studio · Bengaluru · creativecamel.in</div></div>
+      <div class="btns"><a class="btn" id="mailBtn" href="mailto:vijay@creativecamel.in">Book a 20-minute call →</a><a class="btn ghost" href="https://creativecamel.in" target="_blank" rel="noopener">See our work</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© <span id="yr"></span> Creative Camel Studio · Designing with a heart</span><span>Made in Bengaluru</span></div></footer>
+
+<script>
+/* ---------- content ---------- */
+const STAGES = [
+  {k:'Empathise', c:'var(--s1)', hex:'#E8442E', q:'Who are we really solving for?'},
+  {k:'Define',    c:'var(--s2)', hex:'#F0B45A', q:'What is the actual problem?'},
+  {k:'Ideate',    c:'var(--s3)', hex:'#2E7FE8', q:'What could we try?'},
+  {k:'Prototype', c:'var(--s4)', hex:'#9333EA', q:'What is the cheapest way to make it real?'},
+  {k:'Test',      c:'var(--s5)', hex:'#1F9D6B', q:'Does it actually work for people?'}
+];
+
+const A = {
+ school: {
+  label:'school', forDefault:'your school',
+  lede:'A hands-on programme that teaches students to notice problems, understand people and build solutions, the skills no AI can do for them.',
+  formats:'Workshops · Design-thinking club · Teacher development',
+  whyTitle:'AI can now do the homework. <em>It can\'t find the problem.</em>',
+  why:["Your students will grow up in a world where answers are cheap. A chatbot will write the essay and solve the sum. What it can't do is notice what's wrong in the world around them, understand the people affected and imagine something better.",
+       "That is exactly what design thinking teaches: a structured, hands-on way to solve real problems. Students learn it by doing it, not by memorising it.",
+       "It also fits the direction of NEP 2020, which asks schools for experiential, inquiry-led learning and the skills of creativity, collaboration and critical thinking."],
+  stage:[
+   {do:['Interview classmates, teachers and staff','Shadow a real routine, such as the morning rush','Write down what people do, not what they say'],tools:['Interview cards','Observation sheets','Empathy maps'],out:'An empathy map built from real conversations'},
+   {do:['Sort notes into themes on the wall','Spot the pattern that matters most','Write one sharp "How might we…" question'],tools:['Sticky-note walls','Affinity mapping','HMW cards'],out:'One clear problem statement the team agrees on'},
+   {do:['50 ideas in 10 minutes, no judging','Build on each other\'s ideas','Vote and pick the boldest workable one'],tools:['Crazy 8s','Idea voting','Mash-ups'],out:'A shortlist of ideas, and one chosen to build'},
+   {do:['Build it with paper, cardboard and tape','Act out the experience as a role-play','Make it real enough to react to'],tools:['Paper prototypes','Storyboards','Role-play'],out:'A prototype someone can hold or walk through'},
+   {do:['Put it in front of real users','Watch, don\'t explain','Improve it, then pitch it to the principal'],tools:['Test scripts','Feedback grids','Pitch canvas'],out:'A tested solution and a 3-minute pitch'}
+  ],
+  brief:'"Redesign the school morning, from the gate to the first bell."',
+  briefWhy:'Every student lives this problem every day, so research is easy and the stakes feel real.',
+  chal:[
+   {t:'Day 1 · Empathise',h:'Students interview 3 people each',p:'Teams talk to classmates, teachers, the security guard and parents at drop-off.',notes:['"The gate jams at 7:52 every day."','"I skip breakfast to catch the bus."','"Late slips waste 10 minutes."']},
+   {t:'Day 1 · Define',h:'One problem rises to the top',p:'Clustering 60+ notes shows that the real pain is the 8-minute crush at the gate, not "being late".',notes:['How might we spread out arrivals at the gate?']},
+   {t:'Day 2 · Ideate',h:'Fifty ideas, three favourites',p:'Wild ideas welcome. The team votes for the most promising.',notes:['Staggered gates by grade','A "breakfast corner" before 7:45','Digital late-slip by QR']},
+   {t:'Day 2 · Prototype',h:'A cardboard model of the new gate',p:'Teams build a model and a one-page plan, then role-play the new morning.',notes:['Cardboard gate model','Arrival-time poster','Role-play script']},
+   {t:'Day 3 · Test & pitch',h:'Real feedback, then a pitch',p:'Classmates try it, teams improve it, and the best idea is pitched to the principal.',notes:['8 of 10 testers preferred staggered gates','Pitch to the principal ✓']}
+  ],
+  fmts:[
+   {id:'w',n:'Workshop intensive',s:'Our forte · 1–3 days',unit:'Days',min:1,max:3,def:2},
+   {id:'c',n:'Design-thinking club',s:'Term-long · fortnightly',unit:'Sessions',min:4,max:10,def:6},
+   {id:'t',n:'Teacher development',s:'Half or full day',unit:'Days',min:1,max:2,def:1}
+  ],
+  outTitle:'What students <em>walk away with</em>',
+  outcomes:[['Curiosity with a method','A repeatable way to break down any messy problem.'],['Empathy, practised','They interview real people and listen before they solve.'],['Confidence to build','Ideas turned into prototypes and tested within hours.'],['Teamwork that works','Roles, critique and decisions made together.'],['Presentation skills','Every team pitches its solution and defends its choices.'],['A certificate they earned','Assessed on the work they produced, not attendance.']],
+  cta:'Let\'s design a workshop <em>around your students.</em>'
+ },
+ college: {
+  label:'college', forDefault:'your college',
+  lede:'A hands-on programme that turns students into graduates who can frame a problem, understand users and prototype solutions, whatever their branch.',
+  formats:'Workshops · Outside faculty · Mentorship',
+  whyTitle:'Employers don\'t hire for tools. <em>They hire for thinking.</em>',
+  why:["Most graduates leave college knowing the tools of their discipline. Far fewer know how to take a vague, real-world problem, understand the people behind it and turn it into a solution that works. That gap is what recruiters notice first.",
+       "AI is widening it. Routine output is being automated; what stays valuable is judgement: framing the right problem, understanding users, prototyping fast and explaining decisions.",
+       "Design thinking builds exactly that across engineering, management, commerce and the sciences, and it is taught by someone who hires and promotes people in industry every week."],
+  stage:[
+   {do:['Plan and run real user interviews','Observe people in context, not in a survey','Capture quotes, behaviours and pain points'],tools:['Interview guides','Field notes','Empathy maps'],out:'Research grounded in real users, not assumptions'},
+   {do:['Cluster raw notes into patterns','Map the current journey and where it breaks','Write a sharp, testable problem statement'],tools:['Affinity mapping','Journey maps','AI-assisted synthesis'],out:'A problem statement worth solving'},
+   {do:['Diverge fast, then converge','Sketch alternatives side by side','Pick ideas against user evidence'],tools:['Crazy 8s','Sketching','Impact/effort grid'],out:'A shortlist of evidence-backed concepts'},
+   {do:['Wireframe layout and hierarchy','Build a clickable prototype in Figma','Use AI to explore options faster'],tools:['Figma','Wireframes','AI design tools'],out:'A clickable prototype people can try'},
+   {do:['Run usability tests with real users','Watch without stepping in to help','Iterate and present as a case study'],tools:['Test scripts','Usability metrics','Case-study template'],out:'A tested solution and a portfolio-ready case study'}
+  ],
+  brief:'"Fix one thing on campus that students quietly hate."',
+  briefWhy:'A real, familiar problem with real users nearby, so the research is genuine and the results can be shown to faculty.',
+  chal:[
+   {t:'Day 1 · Empathise',h:'Teams interview 15 students',p:'Canteen queues, library seats, attendance apps: teams pick an area and go and talk to people.',notes:['"I spend 25 minutes in the lunch queue."','"Nobody knows which lab is free."','"The app logs me out every time."']},
+   {t:'Day 2 · Define',h:'Journey mapping shows the breaking point',p:'The real problem isn\'t the food; it\'s not knowing how long the wait will be.',notes:['How might we make wait times visible before students leave class?']},
+   {t:'Day 2 · Ideate',h:'Concepts, sketched and compared',p:'Teams sketch eight alternatives each, then pick the strongest against their research.',notes:['Live queue meter','Pre-order slots','Peak-hour nudges']},
+   {t:'Day 3–4 · Prototype',h:'A clickable prototype in Figma',p:'Paper first, then a clickable flow, with AI used to explore variations quickly.',notes:['Paper sketches','Figma flow, 6 screens','AI-generated variants, checked by hand']},
+   {t:'Day 4–5 · Test & present',h:'Usability tests, then a jury',p:'Teams test with students who have never seen it, iterate, and present to faculty as a case study.',notes:['5 usability sessions','2 rounds of iteration','Case study and certificate ✓']}
+  ],
+  fmts:[
+   {id:'w',n:'Workshop intensive',s:'Our forte · 2–5 days',unit:'Days',min:1,max:5,def:3},
+   {id:'f',n:'Outside faculty',s:'Semester · weekly sessions',unit:'Sessions',min:6,max:14,def:10},
+   {id:'m',n:'Mentorship',s:'Projects, E-Cells, incubation',unit:'Weeks',min:6,max:12,def:8}
+  ],
+  outTitle:'What students <em>walk away with</em>',
+  outcomes:[['Problem framing','Turning a vague ask into a sharp, testable problem statement.'],['User research','Planning and running real interviews, then finding the patterns.'],['Rapid prototyping','From paper to a clickable prototype, tested on real users.'],['AI as a working tool','Using AI to move faster, and knowing where it misleads.'],['Industry storytelling','Presenting work the way hiring managers want to hear it.'],['Portfolio-ready work','A case study and an assessed, verifiable certificate.']],
+  cta:'Let\'s shape a programme <em>for your students.</em>'
+ },
+ corporate: {
+  label:'team', forDefault:'your team',
+  lede:'Hands-on design-thinking training run against your own product backlog, so teams learn the method by validating real work before it\'s built.',
+  formats:'Design-sprint workshops · Leadership sessions · Team coaching',
+  whyTitle:'Teams move fast. <em>The question is in which direction.</em>',
+  why:["Most products don't fail because teams can't build. They fail because teams build the wrong thing, confidently and on schedule. Design thinking puts users at the centre before the expensive work starts.",
+       "AI makes this more urgent, not less. Shipping is faster than ever, so the cost of a wrong decision compounds faster too. Teams need the judgement to frame problems, test assumptions cheaply and design AI features responsibly.",
+       "Our training is run on your own backlog, not a generic case study, so the learning shows up as better decisions on work you're already doing."],
+  stage:[
+   {do:['Run discovery interviews inside a sprint','Talk to real customers, not proxies','Separate what users say from what they do'],tools:['Interview guides','Discovery sprints','Empathy maps'],out:'Customer evidence gathered in days, not months'},
+   {do:['Synthesise findings into patterns','Map the current journey and its breaking points','Frame a testable problem statement'],tools:['Affinity mapping','AI-assisted synthesis','Journey maps'],out:'A problem the whole team agrees is worth solving'},
+   {do:['Generate options across functions','Include engineering and business constraints','Choose with evidence, not opinion'],tools:['Crazy 8s','Impact/effort','Decision matrix'],out:'Options ranked against user evidence'},
+   {do:['Prototype at the fidelity the question needs','Design AI features with guardrails','Prepare specs for a clean handoff'],tools:['Figma','AI design patterns','Handoff specs'],out:'A prototype ready to put in front of users'},
+   {do:['Moderate usability sessions with real users','Pick the metric that proves impact','Present findings so leaders act'],tools:['Test scripts','Success metrics','Stakeholder storytelling'],out:'A validated feature, before a sprint is spent building it'}
+  ],
+  brief:'"Your backlog, our method."',
+  briefWhy:'Your team picks one upcoming feature. By the end of the programme it is researched, prototyped and tested with real users.',
+  chal:[
+   {t:'Day 1 · Empathise',h:'Discovery interviews with 6 customers',p:'The team plans and runs interviews on the feature they chose from the backlog.',notes:['"I export to Excel because the report hides what I need."','"I only use it at month-end."']},
+   {t:'Day 1 · Define',h:'The real job behind the feature request',p:'Synthesis (with AI, checked against transcripts) shows that users want a reconciliation they can trust, not more charts.',notes:['How might we make month-end reconciliation trustworthy in one view?']},
+   {t:'Day 2 · Ideate',h:'Cross-functional options',p:'Product, engineering and design sketch together and rank options by evidence and effort.',notes:['Exception-first view','Auto-flag mismatches','Explainable AI summary']},
+   {t:'Day 2 · Prototype',h:'A prototype with AI guardrails',p:'The team prototypes the chosen flow, including AI error states and human oversight.',notes:['Clickable flow','Error and confidence states','Handoff notes']},
+   {t:'Day 3 · Test & present',h:'Validated before it is built',p:'Five usability sessions, one metric to prove impact, and a story for leadership.',notes:['5 of 6 completed the task unaided','Success metric agreed','Leadership read-out ✓']}
+  ],
+  fmts:[
+   {id:'w',n:'Design-sprint workshop',s:'Most booked · 1–3 days',unit:'Days',min:1,max:3,def:2},
+   {id:'l',n:'Leadership sessions',s:'Half-day sessions',unit:'Sessions',min:1,max:4,def:2},
+   {id:'k',n:'Team coaching',s:'6–12 weeks on live work',unit:'Weeks',min:6,max:12,def:8}
+  ],
+  outTitle:'What your team <em>walks away with</em>',
+  outcomes:[['Sharper problem framing','Vague asks turned into testable problem statements.'],['Fast discovery','User research run inside a compressed sprint.'],['Evidence over opinion','Prototypes tested with real users before code is written.'],['Responsible AI design','Error states, consent, guardrails and human oversight.'],['Stakeholder storytelling','Findings presented so decision-makers act.'],['A shared language','Product, engineering and design working from one playbook.']],
+  cta:'Let\'s run it on a problem <em>your team is facing now.</em>'
+ }
+};
+
+/* syllabus topics per format, from creativecamel.in */
+const SYL = {
+ school_w:[[['What is design?','Design as a way of making decisions'],['Spot a problem worth solving','Look closely at everyday life'],['Empathy interviews','Ask, listen, observe']],[['Make sense of what you heard','Sort notes into themes'],['Define the challenge','Write a "How might we…"'],['Ideate','50 ideas in 10 minutes']],[['Prototype','Paper, cardboard and role-play'],['Test with real users','Watch, then improve'],['Pitch','Present to the principal and get assessed']]],
+ school_c:['What is design?','Observation walk','Empathy interviews','Finding patterns','How might we…','Ideation games','Paper prototyping','Testing with users','Improving the idea','Showcase for parents'],
+ school_t:[[['Design thinking for teachers','The process, end to end'],['Running a design project in class','From brief to showcase'],['Assessing creative work','Rubrics that reward thinking']],[['Bringing it into your subject','Science, social studies, languages'],['Practice run','Teachers run a mini-project'],['Toolkit handover','Templates and lesson plans']]],
+ college_w:[[['What is design?','Beyond aesthetics: design as decision-making'],['Why UX matters','What good and bad experiences cost'],['The design thinking process','Empathise to test, end to end']],[['User interviews','Writing questions, running your first interview'],['Affinity mapping','Turning messy notes into themes']],[['Wireframing & UI basics','Layout, hierarchy, type and colour'],['Figma fundamentals','Frames, components, auto-layout']],[['Prototyping','Linking screens people can try'],['Designing with AI tools','Faster options, and where AI misleads',1],['Usability testing','Watching without stepping in']],[['AI ethics & bias','Where AI gets it wrong, and for whom',1],['Portfolio & case study basics','Writing it up so it reads as thinking']]],
+ college_f:['What is design?','Why UX matters','The design thinking process','User interviews','Affinity mapping','Problem statements','Ideation','Wireframing & UI basics','Figma fundamentals','Prototyping','Designing with AI tools','Usability testing','AI ethics & bias','Case studies & portfolios'],
+ college_m:['Project kick-off & problem framing','Research plan review','Interview synthesis','Problem statement critique','Concept review','Prototype critique','Usability test plan','Test findings review','Iteration review','Storytelling & pitch','Jury rehearsal','Final review'],
+ corporate_w:[[['Problem framing & the brief','Vague ask to testable problem'],['Discovery research sprints','Interviews in a compressed timeline'],['Affinity mapping & synthesis','Patterns the whole team can see'],['AI-assisted research synthesis','Faster clustering, checked against transcripts',1]],[['Journey mapping','Where the experience breaks'],['Rapid prototyping','Paper to clickable in hours'],['Designing AI features & guardrails','Error states, consent, oversight',1],['Usability testing','Sessions with your actual users']],[['Design critique','Critique that improves the work'],['Stakeholder storytelling','Findings decision-makers act on'],['Engineering handoff','Specs, tokens, fewer reworks'],['Measuring impact','The metric that proves it moved']]],
+ corporate_l:['Design thinking for leaders','Sponsoring discovery work','Reviewing design with evidence','Scaling the practice across teams'],
+ corporate_k:['Pick the feature & frame it','Discovery plan','Customer interviews','Synthesis review','Journey & opportunity map','Concept critique','Prototype critique','Usability sessions','Findings & iteration','Impact metric','Handoff review','Leadership read-out']
+};
+
+/* Optional pricing. Leave null to show "shared after the call". Example: {w:{perDay:50000}} */
+const PRICING = null;
+
+/* ---------- params ---------- */
+const qs = new URLSearchParams(location.search);
+let aud = (qs.get('a')||qs.get('for-type')||'college').toLowerCase();
+if (aud.startsWith('sch')) aud='school'; else if (aud.startsWith('corp')||aud.startsWith('team')||aud.startsWith('comp')) aud='corporate'; else aud='college';
+const D = A[aud];
+const org = (qs.get('for')||'').trim().slice(0,80);
+const orgName = org || D.forDefault;
+const $ = s=>document.querySelector(s);
+const esc = s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.title = 'Design Thinking for '+(org||('your '+D.label))+' · Creative Camel Studio';
+$('#heroFor').textContent = 'for '+orgName;
+$('#barFor').textContent = '· for '+(org||('your '+D.label));
+$('#heroLede').textContent = D.lede;
+$('#metaFor').textContent = org || ('Your '+D.label);
+$('#metaFormats').textContent = D.formats;
+const dt = qs.get('date') ? new Date(qs.get('date')) : new Date();
+$('#metaDate').textContent = dt.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+$('#whyTitle').innerHTML = D.whyTitle;
+$('#whyBody').innerHTML = D.why.map(p=>'<p>'+esc(p)+'</p>').join('');
+$('#outTitle').innerHTML = D.outTitle;
+$('#ctaTitle').innerHTML = D.cta;
+$('#yr').textContent = new Date().getFullYear();
+const subj = 'Design thinking for '+(org||('our '+D.label));
+$('#mailBtn').href = 'mailto:vijay@creativecamel.in?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent('Hi Vijay,\n\nWe saw your proposal and would like to set up a 20-minute call.\n\nName:\nRole:\nGroup size:\nPreferred dates:\n');
+
+/* ---------- wheel ---------- */
+(function(){
+  const svg = $('#wheelSvg'), cx=250, cy=250, R=240, r=150, gap=2.2;
+  const n=STAGES.length; let html='';
+  const pt=(a,rad)=>[cx+rad*Math.cos(a), cy+rad*Math.sin(a)];
+  STAGES.forEach((s,i)=>{
+    const a0=(-90+i*360/n+gap/2)*Math.PI/180, a1=(-90+(i+1)*360/n-gap/2)*Math.PI/180;
+    const [x0,y0]=pt(a0,R),[x1,y1]=pt(a1,R),[x2,y2]=pt(a1,r),[x3,y3]=pt(a0,r);
+    const am=(a0+a1)/2, [lx,ly]=pt(am,(R+r)/2);
+    html+=`<g class="seg" data-i="${i}" tabindex="0" role="button" aria-label="${s.k}"><path d="M${x0},${y0} A${R},${R} 0 0 1 ${x1},${y1} L${x2},${y2} A${r},${r} 0 0 0 ${x3},${y3} Z" fill="${s.hex}"/><text class="lbl" x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" fill="#fff" style="fill:#fff">${s.k}</text></g>`;
+  });
+  svg.innerHTML=html;
+  svg.querySelectorAll('.seg').forEach(g=>{
+    const go=()=>{ selectStage(+g.dataset.i); document.getElementById('method').scrollIntoView(); };
+    g.addEventListener('click',go);
+    g.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();go();} });
+    g.addEventListener('mouseenter',()=>{ $('#wheel').classList.add('dim'); g.classList.add('on'); $('#wheelBig').textContent=STAGES[g.dataset.i].k; $('#wheelSmall').textContent=STAGES[g.dataset.i].q; });
+    g.addEventListener('mouseleave',()=>{ $('#wheel').classList.remove('dim'); g.classList.remove('on'); $('#wheelBig').textContent='5 stages'; $('#wheelSmall').textContent='Tap a stage to explore'; });
+  });
+  $('#jump').innerHTML = [['#why','Why now','var(--s1)'],['#challenge','Sample challenge','var(--s3)'],['#programme','Build your programme','var(--s4)'],['#next','Next steps','var(--s5)']].map(([h,t,c])=>`<a href="${h}"><i style="background:${c}"></i>${t}</a>`).join('');
+})();
+
+/* ---------- stage explorer ---------- */
+function selectStage(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>{t.classList.toggle('on',i===j);t.setAttribute('aria-selected',i===j);});
+  const s=STAGES[i], d=D.stage[i];
+  $('#panel').innerHTML=`<div class="big" style="color:${s.hex}">0${i+1}</div>
+    <div class="kicker"><i style="background:${s.hex}"></i>Stage ${i+1} of 5</div>
+    <h3>${s.k}</h3><div class="q">${s.q}</div>
+    <div class="cols"><div><h4>What participants do</h4><ul>${d.do.map(x=>'<li>'+esc(x)+'</li>').join('')}</ul></div>
+    <div><h4>Tools they use</h4><ul>${d.tools.map(x=>'<li>'+esc(x)+'</li>').join('')}</ul></div></div>
+    <div class="out"><b>They leave this stage with:</b> ${esc(d.out)}</div>`;
+}
+$('#tabs').innerHTML = STAGES.map((s,i)=>`<button class="tab" role="tab" data-i="${i}"><span class="no" style="background:${s.hex}">${i+1}</span>${s.k}</button>`).join('');
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>selectStage(+t.dataset.i)));
+selectStage(0);
+
+/* ---------- challenge stepper ---------- */
+$('#chalBrief').textContent = D.brief; $('#chalWhy').textContent = D.briefWhy;
+let ci=0; const tilts=['-2deg','1.5deg','-1deg','2deg'], cols=['#FCEBDB','#DCEAFB','#F0DFF7','#FFF1C2'];
+function chal(i){
+  ci=i; const c=D.chal[i];
+  $('#chalDots').innerHTML = D.chal.map((_,j)=>`<button aria-label="Step ${j+1}" class="${j<=i?'on':''}" data-j="${j}"></button>`).join('');
+  $('#chalDots').querySelectorAll('button').forEach(b=>b.onclick=()=>chal(+b.dataset.j));
+  $('#board').innerHTML = `<div class="day" style="color:${STAGES[i].hex}">${esc(c.t)}</div><h3>${esc(c.h)}</h3><p>${esc(c.p)}</p>
+    <div class="artifacts">${c.notes.map((n,k)=>`<div class="note" style="--r:${tilts[k%4]};background:${cols[k%4]};animation-delay:${k*90}ms">${esc(n)}</div>`).join('')}</div>
+    <div class="nav2"><button class="btn ghost" id="cPrev" ${i===0?'disabled':''}>← Back</button><button class="btn" id="cNext">${i===D.chal.length-1?'Start over ↺':'Next stage →'}</button></div>`;
+  $('#cPrev').onclick=()=>chal(Math.max(0,ci-1));
+  $('#cNext').onclick=()=>chal(ci===D.chal.length-1?0:ci+1);
+}
+chal(0);
+
+/* ---------- programme builder ---------- */
+let fmt = D.fmts[0];
+function renderFormats(){
+  $('#formats').innerHTML = D.fmts.map(f=>`<button class="opt ${f.id===fmt.id?'on':''}" data-id="${f.id}"><b>${f.n}</b><span>${f.s}</span></button>`).join('');
+  $('#formats').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{ fmt=D.fmts.find(f=>f.id===b.dataset.id); setLen(); renderFormats(); build(); });
+}
+function setLen(){ const r=$('#len'); r.min=fmt.min; r.max=fmt.max; r.value=fmt.def; $('#lenLabel').textContent=fmt.unit; }
+function build(){
+  const n=+$('#len').value, size=+$('#size').value;
+  $('#lenOut').textContent=n; $('#sizeOut').textContent=size;
+  const key=aud+'_'+fmt.id, syl=SYL[key];
+  let html='';
+  if (Array.isArray(syl[0])) {
+    // day-based: spread all topic-days across n days
+    const all=syl; let daysArr=[];
+    if (n>=all.length) daysArr=all.map(x=>x);
+    else { const flat=all.flat(); const per=Math.ceil(flat.length/n); for(let i=0;i<n;i++) daysArr.push(flat.slice(i*per,(i+1)*per)); }
+    html=daysArr.filter(d=>d.length).map((d,i)=>`<div class="dayc" style="animation-delay:${i*60}ms"><h4>${fmt.unit==='Days'?'Day':'Session'} ${i+1}</h4><ul>${d.map(t=>`<li><b>${esc(t[0])}${t[2]?'<span class="ai">AI</span>':''}</b><span>${esc(t[1])}</span></li>`).join('')}</ul></div>`).join('');
+  } else {
+    const topics=syl, items=[];
+    for(let i=0;i<n;i++){ items.push(topics[Math.round(i*(topics.length-1)/Math.max(n-1,1))]); }
+    const lbl=fmt.unit==='Weeks'?'Week':'Session';
+    const rows=items.map((t,i)=>`<li><b>${lbl} ${i+1}</b><span>${esc(t)}</span></li>`);
+    const half=Math.ceil(rows.length/2);
+    html=`<div class="dayc"><h4>${n} ${fmt.unit.toLowerCase()}</h4><ul>${rows.slice(0,half).join('')}</ul></div>`+(rows.length>half?`<div class="dayc" style="animation-delay:60ms"><ul>${rows.slice(half).join('')}</ul></div>`:'');
+  }
+  $('#days').innerHTML=html;
+  const teamSize = aud==='corporate'?4:5, teams=Math.max(1,Math.round(size/teamSize));
+  const facil = size<=30?'Vijay leads every session':(size<=70?'Vijay + 1 co-facilitator':'Vijay + 2 co-facilitators');
+  $('#agTitle').textContent = fmt.n;
+  $('#agChips').innerHTML = `<span class="chip">${n} ${fmt.unit.toLowerCase()}</span><span class="chip">${size} participants</span><span class="chip">Certificate for everyone</span>`;
+  $('#teams').innerHTML = `<b>${teams} teams of ~${teamSize}</b> · ${facil}<div class="dots">${Array.from({length:Math.min(teams,24)},()=>'<span class="t">'+'<i></i>'.repeat(teamSize)+'</span>').join('')}${teams>24?'<span class="chip">+'+(teams-24)+' more</span>':''}</div>`;
+  const p = PRICING && PRICING[fmt.id];
+  $('#invest').innerHTML = p ? `<b>Indicative investment:</b> from ₹${(p.perDay*n).toLocaleString('en-IN')} + GST` : `<b>Investment:</b> shared with your tailored programme after a 20-minute call, based on format, days and group size.`;
+}
+if (aud==='corporate'){ const s=$('#size'); s.min=5; s.max=40; s.step=1; s.value=20; }
+renderFormats(); setLen(); build();
+$('#len').addEventListener('input',build); $('#size').addEventListener('input',build);
+
+/* ---------- outcomes ---------- */
+$('#grid6').innerHTML = D.outcomes.map((o,i)=>`<div class="out6 card reveal"><div class="n">0${i+1}</div><h3>${esc(o[0])}</h3><p>${esc(o[1])}</p></div>`).join('');
+
+/* ---------- draggable feedback cards ---------- */
+(function(){
+  const pile=$('#pile'), imgs=[...pile.querySelectorAll('img')]; let z=10;
+  function layout(){
+    const W=pile.clientWidth, H=pile.clientHeight, w=imgs[0].offsetWidth||200;
+    imgs.forEach((im,i)=>{ const x=(W-w)*(0.08+0.84*i/(imgs.length-1)); const y=(H-w*0.7)*(i%2?0.55:0.15)+10; im.style.left=x+'px'; im.style.top=y+'px'; im.style.transform=`rotate(${[-6,4,-3,6,-4][i]}deg)`; });
+  }
+  imgs.forEach(im=>{
+    im.addEventListener('pointerdown',e=>{
+      e.preventDefault(); im.setPointerCapture(e.pointerId); im.style.zIndex=++z;
+      const r=pile.getBoundingClientRect(), ox=e.clientX-im.offsetLeft, oy=e.clientY-im.offsetTop;
+      const move=ev=>{ im.style.left=Math.min(Math.max(ev.clientX-ox,-40),r.width-im.offsetWidth+40)+'px'; im.style.top=Math.min(Math.max(ev.clientY-oy,-40),r.height-60)+'px'; };
+      const up=()=>{ im.removeEventListener('pointermove',move); im.removeEventListener('pointerup',up); };
+      im.addEventListener('pointermove',move); im.addEventListener('pointerup',up);
+    });
+  });
+  if (document.readyState==='complete') layout(); else window.addEventListener('load',layout);
+  window.addEventListener('resize',layout);
+})();
+
+/* ---------- scroll progress, reveal, counters ---------- */
+const prog=$('#progress'), pct=$('#pct');
+function onScroll(){ const h=document.documentElement; const p=Math.min(1,h.scrollTop/(h.scrollHeight-h.clientHeight||1)); prog.style.width=(p*100)+'%'; pct.textContent=Math.round(p*100)+'%'; }
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const co=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; const el=e.target, to=+el.dataset.count; co.unobserve(el);
+  if(reduce){ el.textContent=to.toLocaleString('en-IN')+'+'; return; }
+  const t0=performance.now(); (function f(t){ const k=Math.min(1,(t-t0)/1400), v=Math.round(to*(1-Math.pow(1-k,3))); el.textContent=v.toLocaleString('en-IN')+(k===1?'+':''); if(k<1) requestAnimationFrame(f); })(t0); }),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+</script>
+</body>
+</html>
